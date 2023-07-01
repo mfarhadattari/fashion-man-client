@@ -1,11 +1,9 @@
 import { Outlet } from "react-router-dom";
-import ThemeToggle from "../components/ThemeToggle";
+import NavigationBar from "../pages/Public/Shared/NavigationBar";
 const MainLayout = () => {
   return (
     <div>
-      <nav>
-        <ThemeToggle></ThemeToggle>
-      </nav>
+      <NavigationBar></NavigationBar>
       <Outlet></Outlet>
       <footer>Footer</footer>
     </div>

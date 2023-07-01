@@ -4,14 +4,14 @@ export const ThemeContext = createContext();
 
 const ThemeProvider = ({ children }) => {
   const [isDark, setIsDark] = useState(
-    localStorage.getItem("pf-theme") == "dark"
+    localStorage.getItem("pf-theme") == "night"
   );
   useEffect(() => {
     if (isDark) {
       document.getElementsByTagName("html")[0].removeAttribute("data-theme");
       document
         .getElementsByTagName("html")[0]
-        .setAttribute("data-theme", "dark");
+        .setAttribute("data-theme", "night");
     } else {
       document.getElementsByTagName("html")[0].removeAttribute("data-theme");
       document
@@ -26,8 +26,8 @@ const ThemeProvider = ({ children }) => {
       document.getElementsByTagName("html")[0].removeAttribute("data-theme");
       document
         .getElementsByTagName("html")[0]
-        .setAttribute("data-theme", "dark");
-      localStorage.setItem("pf-theme", "dark");
+        .setAttribute("data-theme", "night");
+      localStorage.setItem("pf-theme", "night");
     } else {
       document.getElementsByTagName("html")[0].removeAttribute("data-theme");
       document

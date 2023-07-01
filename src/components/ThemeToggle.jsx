@@ -1,8 +1,7 @@
-import { useContext } from "react";
-import { ThemeContext } from "../providers/ThemeProvider";
+import useTheme from "../hooks/useTheme";
 
 const ThemeToggle = () => {
-  const { handleTheme, isDark } = useContext(ThemeContext);
+  const { handleTheme, isDark } = useTheme();
   return (
     <button onClick={handleTheme}>
       {isDark ? (
