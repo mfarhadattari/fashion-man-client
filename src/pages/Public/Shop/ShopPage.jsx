@@ -5,7 +5,7 @@ import ProductCard from "../../../components/ProductCard";
 
 // TODO: Filtering, Searching, Pagination
 
-const Shop = () => {
+const ShopPage = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -34,4 +34,4 @@ const Shop = () => {
   );
 };
 
-export default Shop;
+export default ShopPage;
