@@ -24,6 +24,7 @@ const navOptions = [
 
 const NavigationBar = () => {
   const { isDark } = useTheme();
+  const user = true;
   return (
     <nav
       className={`navbar p-5 md:px-20 items-center ${
@@ -42,21 +43,27 @@ const NavigationBar = () => {
             } `}
           >
             {navOptions.map((option) => (
-              <NavLink key={option.path} to={option.path}>{option.name}</NavLink>
+              <NavLink key={option.path} to={option.path}>
+                {option.name}
+              </NavLink>
             ))}
           </ul>
         </div>
         <a className="text-2xl font-semibold uppercase ">
           <div className="flex flex-col">
             <h1>Programmer</h1>
-            <h1 className="flex justify-evenly items-center"><FaCode></FaCode>Fashion</h1>
+            <h1 className="flex justify-evenly items-center">
+              <FaCode></FaCode>Fashion
+            </h1>
           </div>
         </a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           {navOptions.map((option) => (
-            <NavLink key={option.path} to={option.path}>{option.name}</NavLink>
+            <NavLink key={option.path} to={option.path}>
+              {option.name}
+            </NavLink>
           ))}
         </ul>
       </div>
@@ -94,12 +101,21 @@ const NavigationBar = () => {
               isDark ? "bg-slate-800" : "bg-green-500"
             }`}
           >
-            <div className="flex justify-between items-center">
-              <NavLink to="/profile">Profile</NavLink>
-              <ThemeToggle></ThemeToggle>
-            </div>
-            <NavLink to="orders">Orders</NavLink>
-            <button className="btn">Log Out</button>
+            {user ? (
+              <>
+                <div className="flex justify-between items-center">
+                  <NavLink to="/profile">Profile</NavLink>
+                  <ThemeToggle></ThemeToggle>
+                </div>
+                <NavLink to="orders">Orders</NavLink>
+                <button className="btn btn-sm mt-3 w-fit">Log Out</button>
+              </>
+            ) : (
+              <div className="flex justify-between items-center">
+                <NavLink to="/profile">Login</NavLink>
+                <ThemeToggle></ThemeToggle>
+              </div>
+            )}
           </ul>
         </div>
       </div>
