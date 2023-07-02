@@ -27,7 +27,7 @@ const NavigationBar = () => {
   const user = true;
   return (
     <nav
-      className={`navbar p-5 md:px-20 items-center ${
+      className={`navbar p-5 md:px-20 items-center sticky top-0 z-50 ${
         isDark ? "bg-slate-950" : "bg-green-600 text-white"
       }`}
     >
