@@ -2,7 +2,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Navigation, Pagination } from "swiper";
+import { Navigation, Pagination, Autoplay } from "swiper";
 import banner from "../../../../assets/images/banner.jpg";
 import { Link } from "react-router-dom";
 
@@ -13,7 +13,11 @@ const Banner = () => {
         cssMode={true}
         navigation={true}
         pagination={true}
-        modules={[Navigation, Pagination]}
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: true,
+        }}
+        modules={[Navigation, Pagination, Autoplay]}
         className="mySwiper max-h-[500px] w-full"
       >
         <SwiperSlide>
@@ -24,7 +28,10 @@ const Banner = () => {
               <h1 className="text-2xl md:text-6xl">
                 Stylist picks <br /> beat the heat
               </h1>
-              <Link to="/shops" className="btn btn-sm md:btn-md rounded-none md:mt-5">
+              <Link
+                to="/shops"
+                className="btn btn-sm md:btn-md rounded-none md:mt-5"
+              >
                 Shop Now
               </Link>
             </div>
