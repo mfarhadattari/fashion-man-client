@@ -14,7 +14,7 @@ const Footer = () => {
               <FaEnvelope></FaEnvelope>info@programmer-fashion.com
             </p>
             <p className="flex gap-2 items-center text-base">
-              <FaPhone></FaPhone>+880 1568306714
+              <FaPhone></FaPhone>+880 1234567890
             </p>
           </div>
         </div>
