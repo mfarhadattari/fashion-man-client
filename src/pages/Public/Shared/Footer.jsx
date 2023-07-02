@@ -46,7 +46,7 @@ const Footer = () => {
                 required
                 className="input input-bordered w-full pr-16"
               />
-              <button className="btn bg-green-600 text-white hover:bg-slate-950 absolute top-0 right-0 rounded-l-none">
+              <button className="green-btn absolute top-0 right-0">
                 Subscribe
               </button>
             </div>

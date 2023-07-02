@@ -64,7 +64,7 @@ const ContractPage = () => {
                 <div className="form-control mt-2">
                   <button
                     type="submit"
-                    className="btn rounded-none w-fit bg-green-600 text-white hover:bg-slate-950"
+                    className="green-btn w-fit"
                   >
                     Send Message
                   </button>

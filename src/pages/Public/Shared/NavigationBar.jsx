@@ -2,6 +2,7 @@ import NavLink from "../../../components/NavLink";
 import { FaBars, FaCode } from "react-icons/fa";
 import ThemeToggle from "./../../../components/ThemeToggle";
 import useTheme from "../../../hooks/useTheme";
+import { Link } from "react-router-dom";
 
 const navOptions = [
   {
@@ -49,14 +50,14 @@ const NavigationBar = () => {
             ))}
           </ul>
         </div>
-        <a className="text-2xl font-semibold uppercase ">
+        <Link to="/" className="text-2xl font-semibold uppercase ">
           <div className="flex flex-col">
             <h1>Programmer</h1>
             <h1 className="flex justify-evenly items-center">
               <FaCode></FaCode>Fashion
             </h1>
           </div>
-        </a>
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">

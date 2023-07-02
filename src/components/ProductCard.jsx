@@ -18,7 +18,7 @@ const ProductCard = ({ productInfo }) => {
           </p>
         </div>
       </Link>
-      <button className="btn border-0 rounded-none w-full mx-auto bg-green-600 text-white">
+      <button className="green-btn w-full">
         Add to cart
       </button>
     </div>
