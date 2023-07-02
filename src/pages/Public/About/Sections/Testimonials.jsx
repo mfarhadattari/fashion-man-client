@@ -52,7 +52,7 @@ const Testimonials = () => {
         >
           {reviews.map((review) => (
             <SwiperSlide key={review._id}>
-              <div className="w-full rounded-none h-[400px] border py-5 flex flex-col justify-center items-center relative">
+              <div className="w-full rounded-none h-[400px]  py-5 flex flex-col justify-center items-center relative">
                 <img
                   className="w-32 mx-auto rounded-full border h-32"
                   src={review?.image}

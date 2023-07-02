@@ -20,7 +20,7 @@ const OurTeams = () => {
       ></SectionTitle>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-20 gap-5">
         {teamMembers.map((member) => (
-          <div key={member._id} className="w-full rounded-none border py-5">
+          <div key={member._id} className="w-full rounded-none py-5">
             <img
               className="w-52 mx-auto rounded-full border h-52"
               src={member?.image}
