@@ -33,7 +33,7 @@ const NavigationBar = () => {
     >
       <div className="navbar-start">
         <div className="dropdown">
-          <label tabIndex={0} className="btn btn-ghost lg:hidden">
+          <label tabIndex={0} className="btn btn-ghost text-3xl lg:hidden">
             <FaBars></FaBars>
           </label>
           <ul
