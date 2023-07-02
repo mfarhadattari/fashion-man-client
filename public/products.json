@@ -1,0 +1,284 @@
+[
+    {
+        "_id": "01",
+        "title": "Code Computer Programming Languages T-Shirt for Men",
+        "image": "https://m.media-amazon.com/images/I/51dq2-oIAFL._AC_UX522_.jpg",
+        "price": 400,
+        "Seller": "Seller Name",
+        "rating": 4.5,
+        "discount": 10,
+        "description": "The Men's Heavyweight Tee gives a rich and structured look to the classic t-shirt and works great for layered streetwear outfits. Thanks to its durable fabric, it maintains sharp lines along the edges and lasts a long time. · 100% cotton · Sport Grey is 90% cotton, 10% polyester · Fabric weight: 5.0–5.3 oz/yd² (170–180 g/m²) · Pre-shrunk jersey knit · Open-end yarn · Tubular construction · Taped neck and shoulders · Double seam at sleeves and bottom hem · Tear-away tag · Blank product sourced from Honduras, Nicaragua, Haiti, Dominican Republic, Bangladesh, and Mexico · Great gift idea for IT professionals who love many Programming languages HTML , CSS, JavaScript, React, Vue.js, Angular, TypeScript, Java, C#, C++, Python, PHP, SQL, Scala, Swift, Ruby, R, Kotlin and others.",
+        "size": [
+            "SM",
+            "MD",
+            "LG",
+            "XL",
+            "XXL"
+        ],
+        "Featured": [
+            "100% Cotton",
+            "Sport Grey is 90% cotton, 10% polyester",
+            "Pre-shrunk jersey knit",
+            "Fabric weight: 5.0–5.3 oz/yd² (170–180 g/m²)",
+            "Open-end yarn"
+        ],
+        "Category": "Man's T-shirt",
+        "Tags": [
+            "T-shirt",
+            "Mans",
+            "Programmer"
+        ],
+        "reviews": [
+            {
+                "userName": "user1",
+                "reviews": "review1",
+                "rating": 4.5
+            },
+            {
+                "userName": "user2",
+                "reviews": "review2",
+                "rating": 4.5
+            },
+            {
+                "userName": "user3",
+                "reviews": "review3",
+                "rating": 4.5
+            }
+        ]
+    },
+    {
+        "_id": "02",
+        "title": "Code Computer Programming Languages T-Shirt for Men",
+        "image": "https://m.media-amazon.com/images/I/51dq2-oIAFL._AC_UX522_.jpg",
+        "price": 400,
+        "Seller": "Seller Name",
+        "rating": 4.5,
+        "discount": 10,
+        "description": "The Men's Heavyweight Tee gives a rich and structured look to the classic t-shirt and works great for layered streetwear outfits. Thanks to its durable fabric, it maintains sharp lines along the edges and lasts a long time. · 100% cotton · Sport Grey is 90% cotton, 10% polyester · Fabric weight: 5.0–5.3 oz/yd² (170–180 g/m²) · Pre-shrunk jersey knit · Open-end yarn · Tubular construction · Taped neck and shoulders · Double seam at sleeves and bottom hem · Tear-away tag · Blank product sourced from Honduras, Nicaragua, Haiti, Dominican Republic, Bangladesh, and Mexico · Great gift idea for IT professionals who love many Programming languages HTML , CSS, JavaScript, React, Vue.js, Angular, TypeScript, Java, C#, C++, Python, PHP, SQL, Scala, Swift, Ruby, R, Kotlin and others.",
+        "size": [
+            "SM",
+            "MD",
+            "LG",
+            "XL",
+            "XXL"
+        ],
+        "Featured": [
+            "100% Cotton",
+            "Sport Grey is 90% cotton, 10% polyester",
+            "Pre-shrunk jersey knit",
+            "Fabric weight: 5.0–5.3 oz/yd² (170–180 g/m²)",
+            "Open-end yarn"
+        ],
+        "Category": "Man's T-shirt",
+        "Tags": [
+            "T-shirt",
+            "Mans",
+            "Programmer"
+        ],
+        "reviews": [
+            {
+                "userName": "user1",
+                "reviews": "review1",
+                "rating": 4.5
+            },
+            {
+                "userName": "user2",
+                "reviews": "review2",
+                "rating": 4.5
+            },
+            {
+                "userName": "user3",
+                "reviews": "review3",
+                "rating": 4.5
+            }
+        ]
+    },
+    {
+        "_id": "03",
+        "title": "Code Computer Programming Languages T-Shirt for Men",
+        "image": "https://m.media-amazon.com/images/I/51dq2-oIAFL._AC_UX522_.jpg",
+        "price": 400,
+        "Seller": "Seller Name",
+        "rating": 4.5,
+        "discount": 10,
+        "description": "The Men's Heavyweight Tee gives a rich and structured look to the classic t-shirt and works great for layered streetwear outfits. Thanks to its durable fabric, it maintains sharp lines along the edges and lasts a long time. · 100% cotton · Sport Grey is 90% cotton, 10% polyester · Fabric weight: 5.0–5.3 oz/yd² (170–180 g/m²) · Pre-shrunk jersey knit · Open-end yarn · Tubular construction · Taped neck and shoulders · Double seam at sleeves and bottom hem · Tear-away tag · Blank product sourced from Honduras, Nicaragua, Haiti, Dominican Republic, Bangladesh, and Mexico · Great gift idea for IT professionals who love many Programming languages HTML , CSS, JavaScript, React, Vue.js, Angular, TypeScript, Java, C#, C++, Python, PHP, SQL, Scala, Swift, Ruby, R, Kotlin and others.",
+        "size": [
+            "SM",
+            "MD",
+            "LG",
+            "XL",
+            "XXL"
+        ],
+        "Featured": [
+            "100% Cotton",
+            "Sport Grey is 90% cotton, 10% polyester",
+            "Pre-shrunk jersey knit",
+            "Fabric weight: 5.0–5.3 oz/yd² (170–180 g/m²)",
+            "Open-end yarn"
+        ],
+        "Category": "Man's T-shirt",
+        "Tags": [
+            "T-shirt",
+            "Mans",
+            "Programmer"
+        ],
+        "reviews": [
+            {
+                "userName": "user1",
+                "reviews": "review1",
+                "rating": 4.5
+            },
+            {
+                "userName": "user2",
+                "reviews": "review2",
+                "rating": 4.5
+            },
+            {
+                "userName": "user3",
+                "reviews": "review3",
+                "rating": 4.5
+            }
+        ]
+    },
+    {
+        "_id": "04",
+        "title": "Code Computer Programming Languages T-Shirt for Men",
+        "image": "https://m.media-amazon.com/images/I/51dq2-oIAFL._AC_UX522_.jpg",
+        "price": 400,
+        "Seller": "Seller Name",
+        "rating": 4.5,
+        "discount": 10,
+        "description": "The Men's Heavyweight Tee gives a rich and structured look to the classic t-shirt and works great for layered streetwear outfits. Thanks to its durable fabric, it maintains sharp lines along the edges and lasts a long time. · 100% cotton · Sport Grey is 90% cotton, 10% polyester · Fabric weight: 5.0–5.3 oz/yd² (170–180 g/m²) · Pre-shrunk jersey knit · Open-end yarn · Tubular construction · Taped neck and shoulders · Double seam at sleeves and bottom hem · Tear-away tag · Blank product sourced from Honduras, Nicaragua, Haiti, Dominican Republic, Bangladesh, and Mexico · Great gift idea for IT professionals who love many Programming languages HTML , CSS, JavaScript, React, Vue.js, Angular, TypeScript, Java, C#, C++, Python, PHP, SQL, Scala, Swift, Ruby, R, Kotlin and others.",
+        "size": [
+            "SM",
+            "MD",
+            "LG",
+            "XL",
+            "XXL"
+        ],
+        "Featured": [
+            "100% Cotton",
+            "Sport Grey is 90% cotton, 10% polyester",
+            "Pre-shrunk jersey knit",
+            "Fabric weight: 5.0–5.3 oz/yd² (170–180 g/m²)",
+            "Open-end yarn"
+        ],
+        "Category": "Man's T-shirt",
+        "Tags": [
+            "T-shirt",
+            "Mans",
+            "Programmer"
+        ],
+        "reviews": [
+            {
+                "userName": "user1",
+                "reviews": "review1",
+                "rating": 4.5
+            },
+            {
+                "userName": "user2",
+                "reviews": "review2",
+                "rating": 4.5
+            },
+            {
+                "userName": "user3",
+                "reviews": "review3",
+                "rating": 4.5
+            }
+        ]
+    },
+    {
+        "_id": "05",
+        "title": "Code Computer Programming Languages T-Shirt for Men",
+        "image": "https://m.media-amazon.com/images/I/51dq2-oIAFL._AC_UX522_.jpg",
+        "price": 400,
+        "Seller": "Seller Name",
+        "rating": 4.5,
+        "discount": 10,
+        "description": "The Men's Heavyweight Tee gives a rich and structured look to the classic t-shirt and works great for layered streetwear outfits. Thanks to its durable fabric, it maintains sharp lines along the edges and lasts a long time. · 100% cotton · Sport Grey is 90% cotton, 10% polyester · Fabric weight: 5.0–5.3 oz/yd² (170–180 g/m²) · Pre-shrunk jersey knit · Open-end yarn · Tubular construction · Taped neck and shoulders · Double seam at sleeves and bottom hem · Tear-away tag · Blank product sourced from Honduras, Nicaragua, Haiti, Dominican Republic, Bangladesh, and Mexico · Great gift idea for IT professionals who love many Programming languages HTML , CSS, JavaScript, React, Vue.js, Angular, TypeScript, Java, C#, C++, Python, PHP, SQL, Scala, Swift, Ruby, R, Kotlin and others.",
+        "size": [
+            "SM",
+            "MD",
+            "LG",
+            "XL",
+            "XXL"
+        ],
+        "Featured": [
+            "100% Cotton",
+            "Sport Grey is 90% cotton, 10% polyester",
+            "Pre-shrunk jersey knit",
+            "Fabric weight: 5.0–5.3 oz/yd² (170–180 g/m²)",
+            "Open-end yarn"
+        ],
+        "Category": "Man's T-shirt",
+        "Tags": [
+            "T-shirt",
+            "Mans",
+            "Programmer"
+        ],
+        "reviews": [
+            {
+                "userName": "user1",
+                "reviews": "review1",
+                "rating": 4.5
+            },
+            {
+                "userName": "user2",
+                "reviews": "review2",
+                "rating": 4.5
+            },
+            {
+                "userName": "user3",
+                "reviews": "review3",
+                "rating": 4.5
+            }
+        ]
+    },
+    {
+        "_id": "06",
+        "title": "Code Computer Programming Languages T-Shirt for Men",
+        "image": "https://m.media-amazon.com/images/I/51dq2-oIAFL._AC_UX522_.jpg",
+        "price": 400,
+        "Seller": "Seller Name",
+        "rating": 4.5,
+        "discount": 10,
+        "description": "The Men's Heavyweight Tee gives a rich and structured look to the classic t-shirt and works great for layered streetwear outfits. Thanks to its durable fabric, it maintains sharp lines along the edges and lasts a long time. · 100% cotton · Sport Grey is 90% cotton, 10% polyester · Fabric weight: 5.0–5.3 oz/yd² (170–180 g/m²) · Pre-shrunk jersey knit · Open-end yarn · Tubular construction · Taped neck and shoulders · Double seam at sleeves and bottom hem · Tear-away tag · Blank product sourced from Honduras, Nicaragua, Haiti, Dominican Republic, Bangladesh, and Mexico · Great gift idea for IT professionals who love many Programming languages HTML , CSS, JavaScript, React, Vue.js, Angular, TypeScript, Java, C#, C++, Python, PHP, SQL, Scala, Swift, Ruby, R, Kotlin and others.",
+        "size": [
+            "SM",
+            "MD",
+            "LG",
+            "XL",
+            "XXL"
+        ],
+        "Featured": [
+            "100% Cotton",
+            "Sport Grey is 90% cotton, 10% polyester",
+            "Pre-shrunk jersey knit",
+            "Fabric weight: 5.0–5.3 oz/yd² (170–180 g/m²)",
+            "Open-end yarn"
+        ],
+        "Category": "Man's T-shirt",
+        "Tags": [
+            "T-shirt",
+            "Mans",
+            "Programmer"
+        ],
+        "reviews": [
+            {
+                "userName": "user1",
+                "reviews": "review1",
+                "rating": 4.5
+            },
+            {
+                "userName": "user2",
+                "reviews": "review2",
+                "rating": 4.5
+            },
+            {
+                "userName": "user3",
+                "reviews": "review3",
+                "rating": 4.5
+            }
+        ]
+    }
+]
