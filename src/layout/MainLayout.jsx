@@ -10,7 +10,11 @@ const MainLayout = () => {
       <Outlet></Outlet>
       <ScrollToTop
         smooth
-        component={<button className="btn btn-circle btn-outline text-xl text-red-500"><FaArrowUp></FaArrowUp></button>}
+        component={
+          <span className="btn btn-circle btn-outline text-xl text-red-500">
+            <FaArrowUp></FaArrowUp>
+          </span>
+        }
         style={{
           display: "flex",
           justifyContent: "center",
@@ -18,7 +22,7 @@ const MainLayout = () => {
           width: "50px",
           height: "50px",
           backgroundColor: "transparent",
-          boxShadow: "none"
+          boxShadow: "none",
         }}
       />
       <Footer></Footer>

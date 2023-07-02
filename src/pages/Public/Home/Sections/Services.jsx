@@ -91,7 +91,7 @@ const Services = () => {
                 A one-stop platform for all your fashion needs,
                 <br /> hassle-free. Buy with a peace of mind.
               </p>
-              <Link to="/shops" className="btn btn-outline rounded-none text-white">
+              <Link to="/shop" className="btn btn-outline rounded-none text-white">
                 Shop Now
               </Link>
             </div>
@@ -103,7 +103,7 @@ const Services = () => {
                 End of season sale. Buy any 2 items <br /> of your choice and
                 get 1 free.
               </p>
-              <Link to="/shops" className="btn btn-outline rounded-none text-white">
+              <Link to="/shop" className="btn btn-outline rounded-none text-white">
                 Shop Now
               </Link>
             </div>
@@ -115,7 +115,7 @@ const Services = () => {
                 Make your payment after
                 <br /> products received.
               </p>
-              <Link to="/shops" className="btn btn-outline rounded-none text-white">
+              <Link to="/shop" className="btn btn-outline rounded-none text-white">
                 Shop Now
               </Link>
             </div>

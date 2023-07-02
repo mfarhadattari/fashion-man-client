@@ -9,8 +9,8 @@ const navOptions = [
     name: "Home",
   },
   {
-    path: "/shops",
-    name: "Shops",
+    path: "/shop",
+    name: "Shop",
   },
   {
     path: "/about",

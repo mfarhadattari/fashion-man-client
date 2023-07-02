@@ -29,7 +29,7 @@ const Banner = () => {
                 Stylist picks <br /> beat the heat
               </h1>
               <Link
-                to="/shops"
+                to="/shop"
                 className="btn btn-sm md:btn-md rounded-none md:mt-5"
               >
                 Shop Now

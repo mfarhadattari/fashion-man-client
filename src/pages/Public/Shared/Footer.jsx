@@ -22,7 +22,7 @@ const Footer = () => {
           <span className="footer-title">Company</span>
           <NavLink to="/about">About Us</NavLink>
           <NavLink to="/contract">Contract Us</NavLink>
-          <NavLink to="/shops">Shops</NavLink>
+          <NavLink to="/shop">Shops</NavLink>
         </div>
         <div className="flex flex-col">
           <span className="footer-title">Legal</span>

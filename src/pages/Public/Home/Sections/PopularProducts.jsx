@@ -25,7 +25,7 @@ const PopularProducts = () => {
         ))}
       </div>
       <div className="flex justify-center my-5">
-        <Link to='/shops' className="btn rounded-none w-[250px]">Shop Now</Link>
+        <Link to='/shop' className="btn rounded-none w-[250px]">Shop Now</Link>
       </div>
     </section>
   );
