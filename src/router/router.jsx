@@ -5,6 +5,7 @@ import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import ShopPage from "../pages/Public/Shop/ShopPage";
 import AboutPage from "../pages/Public/About/AboutPage";
 import ContractPage from "../pages/Public/Contract/ContractPage";
+import ProductDetailsPage from "../pages/Public/Shop/ProductDetailsPage";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
       {
         path: "/shop",
         element: <ShopPage></ShopPage>,
+      },
+      {
+        path: "/shop/:id",
+        element: <ProductDetailsPage></ProductDetailsPage>,
       },
       {
         path: "/contract",
