@@ -18,7 +18,7 @@ const ProductCard = ({ productInfo }) => {
           {productInfo?.price} &#2547;
         </p>
         <div className="card-actions">
-          <button className="btn bg-green-600 text-white w-full">
+          <button className="btn rounded-none w-full mx-auto bg-green-600 text-white">
             Add to cart
           </button>
         </div>

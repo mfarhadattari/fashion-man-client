@@ -10,11 +10,13 @@ import "swiper/css/pagination";
 import "swiper/css/effect-cube";
 import { Autoplay, EffectCube, Pagination } from "swiper";
 import { Link } from "react-router-dom";
+import SectionTitle from "../../../../components/SectionTitle";
 
 const Services = () => {
   return (
-    <>
-      <section className="my-10">
+    <section className="my-20">
+      <SectionTitle title="Our Services" subtitle="Discover our awesome services!"></SectionTitle>
+      <div className="my-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 items-start w-fit mx-auto">
           <div className="flex gap-5 items-center w-[300px]">
             <div className="text-[#024E82] text-5xl ">
@@ -63,8 +65,8 @@ const Services = () => {
             </div>
           </div>
         </div>
-      </section>
-      <section className="my-20">
+      </div>
+      <div className="my-20">
         <Swiper
           effect={"cube"}
           grabCursor={true}
@@ -89,7 +91,7 @@ const Services = () => {
                 A one-stop platform for all your fashion needs,
                 <br /> hassle-free. Buy with a peace of mind.
               </p>
-              <Link to="/shops" className="btn btn-outline text-white">
+              <Link to="/shops" className="btn btn-outline rounded-none text-white">
                 Shop Now
               </Link>
             </div>
@@ -101,7 +103,7 @@ const Services = () => {
                 End of season sale. Buy any 2 items <br /> of your choice and
                 get 1 free.
               </p>
-              <Link to="/shops" className="btn btn-outline text-white">
+              <Link to="/shops" className="btn btn-outline rounded-none text-white">
                 Shop Now
               </Link>
             </div>
@@ -113,14 +115,14 @@ const Services = () => {
                 Make your payment after
                 <br /> products received.
               </p>
-              <Link to="/shops" className="btn btn-outline text-white">
+              <Link to="/shops" className="btn btn-outline rounded-none text-white">
                 Shop Now
               </Link>
             </div>
           </SwiperSlide>
         </Swiper>
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
 
