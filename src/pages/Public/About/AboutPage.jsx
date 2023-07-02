@@ -1,6 +1,7 @@
 import MenuCover from "../../../components/MenuCover";
 import banner from "../../../assets/images/banner.jpg";
 import Recommendation from "./Sections/Recommendation";
+import OurTeams from "./Sections/OurTeams";
 
 const AboutPage = () => {
   return (
@@ -11,6 +12,7 @@ const AboutPage = () => {
         backgroundURL={banner}
       ></MenuCover>
       <Recommendation></Recommendation>
+      <OurTeams></OurTeams>
     </main>
   );
 };

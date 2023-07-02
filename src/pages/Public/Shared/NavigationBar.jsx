@@ -24,7 +24,7 @@ const navOptions = [
 
 const NavigationBar = () => {
   const { isDark } = useTheme();
-  const user = true;
+  const user = false;
   return (
     <nav
       className={`navbar p-5 md:px-20 items-center sticky top-0 z-50 ${

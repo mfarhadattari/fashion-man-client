@@ -6,8 +6,10 @@ import { FaArrowUp } from "react-icons/fa";
 const MainLayout = () => {
   return (
     <div className="min-h-screen flex flex-col justify-between ">
-      <NavigationBar></NavigationBar>
-      <Outlet></Outlet>
+      <div>
+        <NavigationBar></NavigationBar>
+        <Outlet></Outlet>
+      </div>
       <ScrollToTop
         smooth
         component={

@@ -1,0 +1,92 @@
+[
+    {
+        "_id": "01",
+        "name": "Mohammad Farhad 1",
+        "position": "Founders",
+        "image": "/icon.png"
+    },
+    {
+        "_id": "02",
+        "name": "Mohammad Farhad 2",
+        "position": "Founders",
+        "image": "/icon.png"
+    },
+    {
+        "_id": "03",
+        "name": "Mohammad Farhad 2",
+        "position": "Manager",
+        "image": "/icon.png"
+    },
+    {
+        "_id": "04",
+        "name": "Mohammad Farhad 4",
+        "position": "Admin",
+        "image": "/icon.png"
+    },
+    {
+        "_id": "05",
+        "name": "Mohammad Farhad 5",
+        "position": "Product Manager",
+        "image": "/icon.png"
+    },
+    {
+        "_id": "07",
+        "name": "Mohammad Farhad 6",
+        "position": "Seller",
+        "image": "/icon.png"
+    },
+    {
+        "_id": "08",
+        "name": "Mohammad Farhad 6",
+        "position": "Seller",
+        "image": "/icon.png"
+    },
+    {
+        "_id": "09",
+        "name": "Mohammad Farhad 7",
+        "position": "Seller",
+        "image": "/icon.png"
+    },
+    {
+        "_id": "10",
+        "name": "Mohammad Farhad 8",
+        "position": "Seller",
+        "image": "/icon.png"
+    },
+    {
+        "_id": "11",
+        "name": "Mohammad Farhad 9",
+        "position": "Web Developer",
+        "image": "/icon.png"
+    },
+    {
+        "_id": "12",
+        "name": "Mohammad Farhad 10",
+        "position": "App Developer",
+        "image": "/icon.png"
+    },
+    {
+        "_id": "13",
+        "name": "Mohammad Farhad 11",
+        "position": "UI/UX Designer",
+        "image": "/icon.png"
+    },
+    {
+        "_id": "14",
+        "name": "Mohammad Farhad 12",
+        "position": "IT Support Officer",
+        "image": "/icon.png"
+    },
+    {
+        "_id": "15",
+        "name": "Mohammad Farhad 14",
+        "position": "Human Research Officer",
+        "image": "/icon.png"
+    },
+    {
+        "_id": "16",
+        "name": "Mohammad Farhad 15",
+        "position": "Office Assistance",
+        "image": "/icon.png"
+    }
+]
