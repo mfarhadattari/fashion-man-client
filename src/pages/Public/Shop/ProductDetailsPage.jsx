@@ -2,6 +2,7 @@ import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { FaQuoteLeft } from "react-icons/fa";
 
 const ProductDetailsPage = () => {
   const params = useParams();
@@ -44,11 +45,11 @@ const ProductDetailsPage = () => {
                 &#2547;
               </span>
             </p>
-            <p className="text-lg">
+            <ul className="text-lg list-disc ps-5">
               {product?.featured?.map((item, idx) => (
                 <li key={idx}>{item}</li>
               ))}
-            </p>
+            </ul>
             <div className="flex gap-5">
               Available Size:
               {product?.size?.map((item, idx) => (
@@ -75,7 +76,22 @@ const ProductDetailsPage = () => {
         <h1 className="text-4xl font-semibold my-5">Description</h1>
         <div className="text-xl mx-auto text-justify border p-5 md:p-10">
           {product?.description}
-          </div>
+        </div>
+      </section>
+      <section className="my-10 p-5">
+        <h1 className="text-4xl font-semibold my-5">Reviews</h1>
+        <div className="p-5 md:p-10 flex flex-col gap-5">
+          {product?.reviews?.map((review, idx) => (
+            <div key={idx} className="md:flex items-center gap-10 even:flex-row-reverse">
+              <img src={review.image} alt={review.username} className="w-fit mx-auto md:w-1/3" />
+              <div className="w-fit mx-auto md:w-2/3">
+                <span className="text-4xl"><FaQuoteLeft></FaQuoteLeft></span>
+                <p className="text-lg text-justify mt-3">{review.message}</p>
+                <p className="font-bold mt-5">{review.username}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </section>
     </main>
   );
