@@ -1,9 +1,16 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation, useParams } from "react-router-dom";
 import NavigationBar from "../pages/Public/Shared/NavigationBar";
 import Footer from "../pages/Public/Shared/Footer";
 import ScrollToTop from "react-scroll-to-top";
 import { FaArrowUp } from "react-icons/fa";
 const MainLayout = () => {
+  const { pathname } = useLocation();
+  const { id } = useParams();
+  const withoutFooter =
+    pathname === "/login" ||
+    pathname === "/registration" ||
+    pathname === `/shop/${id}`;
+
   return (
     <div className="min-h-screen flex flex-col justify-between ">
       <div>
@@ -27,7 +34,7 @@ const MainLayout = () => {
           boxShadow: "none",
         }}
       />
-      <Footer></Footer>
+     {!withoutFooter && <Footer></Footer>}
     </div>
   );
 };

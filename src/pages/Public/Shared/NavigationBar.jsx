@@ -29,7 +29,7 @@ const navOptions = [
 
 const NavigationBar = () => {
   const { isDark } = useTheme();
-  const user = true;
+  const user = false;
   return (
     <nav
       className={`navbar p-5 md:px-20 items-center sticky top-0 z-50 ${
@@ -117,7 +117,7 @@ const NavigationBar = () => {
               </>
             ) : (
               <div className="flex justify-between items-center">
-                <NavLink to="/dashboard/login">Login</NavLink>
+                <NavLink to="/login">Login</NavLink>
                 <ThemeToggle></ThemeToggle>
               </div>
             )}

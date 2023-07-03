@@ -20,10 +20,6 @@ const options = [
     name: "Orders",
   },
   {
-    path: "/dashboard/login",
-    name: "Login",
-  },
-  {
     path: "/dashboard/checkout",
     name: "Checkout",
   },

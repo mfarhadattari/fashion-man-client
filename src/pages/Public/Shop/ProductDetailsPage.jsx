@@ -27,7 +27,7 @@ const ProductDetailsPage = () => {
             <img
               className="h-[500px] w-full"
               src={product?.image}
-              alt={product.title}
+              alt={product?.title}
             />
           </div>
           <div className="space-y-4">
@@ -41,7 +41,9 @@ const ProductDetailsPage = () => {
               <span>({product?.rating})</span>
             </div>
             <p className="text-2xl flex gap-3">
-              <span className="line-through text-red-500">{product?.price}&#2547;</span>
+              <span className="line-through text-red-500">
+                {product?.price}&#2547;
+              </span>
               <span className="text-blue-700">
                 {product?.price - (product?.price * product?.discount) / 100}
                 &#2547;
@@ -60,13 +62,9 @@ const ProductDetailsPage = () => {
                 </span>
               ))}
             </div>
-            <button
-              className="green-btn w-[250px]"
-            >
-              Add to Cart
-            </button>
+            <button className="green-btn w-[250px]">Add to Cart</button>
             <div className="text-lg">
-              <p>Category: {product.category}</p>
+              <p>Category: {product?.category}</p>
               <p className="flex gap-3">
                 {product?.tags?.map((tag, idx) => (
                   <span className="link link-hover" key={idx}>
