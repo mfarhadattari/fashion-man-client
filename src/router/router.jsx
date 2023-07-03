@@ -8,6 +8,7 @@ import ContractPage from "../pages/Public/Contract/ContractPage";
 import ProductDetailsPage from "../pages/Public/Shop/ProductDetailsPage";
 import DashboardLayout from "../layout/DashboardLayout";
 import LoginPage from "../pages/Public/Account/LoginPage";
+import RegistrationPage from "../pages/Public/Account/RegistrationPage";
 
 const router = createBrowserRouter([
   {
@@ -44,7 +45,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/registration",
-        element: <>Registration Page</>,
+        element: <RegistrationPage></RegistrationPage>,
       },
     ],
   },
