@@ -30,8 +30,19 @@ const navOptions = [
 
 const NavigationBar = () => {
   const { isDark } = useTheme();
-  const { authUser } = useAuth();
+  const { authUser, logout } = useAuth();
   const itemInCart = 0;
+
+  const handelLogOut = () => {
+    logout()
+      .then(() => {
+        console.log("Logout Successfully");
+      })
+      .catch((error) => {
+        console.error(error.message);
+      });
+  };
+
   return (
     <nav
       className={`navbar p-5 md:px-20 items-center sticky top-0 z-50 ${
@@ -123,7 +134,12 @@ const NavigationBar = () => {
                   <ThemeToggle></ThemeToggle>
                 </div>
                 <NavLink to="/dashboard/orders">Orders</NavLink>
-                <button className="btn btn-sm mt-3 w-fit">Log Out</button>
+                <button
+                  className="btn btn-sm mt-3 w-fit"
+                  onClick={handelLogOut}
+                >
+                  Log Out
+                </button>
               </>
             ) : (
               <div className="flex justify-between items-center">

@@ -13,3 +13,7 @@
 .green-input {
   @apply input border border-green-600 rounded-none;
 }
+
+.error-message {
+  @apply text-red-600 mt-2;
+}
