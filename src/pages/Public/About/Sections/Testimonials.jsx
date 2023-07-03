@@ -68,12 +68,13 @@ const Testimonials = () => {
                 <p className="absolute bottom-10 right-10 text-4xl">
                   <FaQuoteRight></FaQuoteRight>
                 </p>
-                <div className="absolute top-10 right-5">
+                <div className="absolute top-10 right-5 flex items-center gap-2">
                   <Rating
-                    style={{ maxWidth: 120 }}
+                    style={{ maxWidth: 90 }}
                     value={review.rating}
                     readOnly
                   />
+                  <span className="text-sm">({review.rating})</span>
                 </div>
               </div>
             </SwiperSlide>

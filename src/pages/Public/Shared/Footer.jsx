@@ -1,6 +1,6 @@
 import moment from "moment/moment";
 import { FaEnvelope, FaPhone } from "react-icons/fa";
-import NavLink from "../../../components/NavLink";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -20,9 +20,19 @@ const Footer = () => {
         </div>
         <div className="flex flex-col">
           <span className="footer-title">Company</span>
-          <NavLink to="/about">About Us</NavLink>
-          <NavLink to="/contract">Contract Us</NavLink>
-          <NavLink to="/shop">Shops</NavLink>
+
+          <Link to="/" className="link link-hover">
+            Home
+          </Link>
+          <Link to="/shop" className="link link-hover">
+            Shops
+          </Link>
+          <Link to="/about" className="link link-hover">
+            About Us
+          </Link>
+          <Link to="/contract" className="link link-hover">
+            Contract Us
+          </Link>
         </div>
         <div className="flex flex-col">
           <span className="footer-title">Legal</span>
