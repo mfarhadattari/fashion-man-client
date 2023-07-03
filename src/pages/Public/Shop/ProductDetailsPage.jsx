@@ -3,6 +3,8 @@ import "@smastrom/react-rating/style.css";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { FaQuoteLeft } from "react-icons/fa";
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import "react-tabs/style/react-tabs.css";
 
 const ProductDetailsPage = () => {
   const params = useParams();
@@ -72,26 +74,51 @@ const ProductDetailsPage = () => {
           </div>
         </div>
       </section>
-      <section className="my-10 p-5">
-        <h1 className="text-4xl font-semibold my-5">Description</h1>
-        <div className="text-xl mx-auto text-justify border p-5 md:p-10">
-          {product?.description}
-        </div>
-      </section>
-      <section className="my-10 p-5">
-        <h1 className="text-4xl font-semibold my-5">Reviews</h1>
-        <div className="p-5 md:p-10 flex flex-col gap-5">
-          {product?.reviews?.map((review, idx) => (
-            <div key={idx} className="md:flex items-center gap-10 even:flex-row-reverse">
-              <img src={review.image} alt={review.username} className="w-fit mx-auto md:w-1/3" />
-              <div className="w-fit mx-auto md:w-2/3">
-                <span className="text-4xl"><FaQuoteLeft></FaQuoteLeft></span>
-                <p className="text-lg text-justify mt-3">{review.message}</p>
-                <p className="font-bold mt-5">{review.username}</p>
-              </div>
+
+      <section className="my-10">
+        <Tabs>
+          <TabList>
+            <Tab>
+              <h1 className="text-2xl font-semibold">Description</h1>
+            </Tab>
+            <Tab>
+              <h1 className="text-2xl font-semibold">Reviews</h1>
+            </Tab>
+          </TabList>
+
+          <TabPanel>
+            <div className="text-xl mx-auto text-justify border p-5 md:p-10">
+              {product?.description}
             </div>
-          ))}
-        </div>
+          </TabPanel>
+          <TabPanel>
+            <div className="p-5 md:p-10 flex flex-col gap-5">
+              {product?.reviews?.map((review, idx) => (
+                <div
+                  key={idx}
+                  className="md:flex items-center gap-10 even:flex-row-reverse"
+                >
+                  <div className="w-fit mx-auto md:w-1/3">
+                    <img
+                      src={review.image}
+                      alt={review.username}
+                      className="w-[200px] mx-auto rounded-full border h-[200px]"
+                    />
+                  </div>
+                  <div className="w-fit mx-auto md:w-2/3">
+                    <span className="text-4xl">
+                      <FaQuoteLeft></FaQuoteLeft>
+                    </span>
+                    <p className="text-lg text-justify mt-3">
+                      {review.message}
+                    </p>
+                    <p className="font-bold mt-5">{review.username}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </TabPanel>
+        </Tabs>
       </section>
     </main>
   );
