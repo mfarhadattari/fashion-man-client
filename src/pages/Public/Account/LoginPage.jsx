@@ -1,19 +1,16 @@
 import { Link } from "react-router-dom";
+import SocialConnect from "./SocialConnect";
 
 const LoginPage = () => {
   return (
     <main>
       <section className="my-10">
         <div className="flex flex-col-reverse md:flex-row w-full lg:w-3/4 p-5 gap-10 mx-auto">
-          <div className="text-center lg:text-left w-full">
-            <p className="py-6">
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-              excepturi exercitationem quasi. In deleniti eaque aut repudiandae
-              et a id nisi.
-            </p>
+          <div className="p-5 w-full">
+            <SocialConnect></SocialConnect>
           </div>
           <div className="p-5 w-full">
-            <h1 className="text-4xl text-center font-bold">Login now!</h1>
+            <h1 className="text-3xl text-center font-bold">Login now!</h1>
             <form className="">
               <div className="form-control">
                 <label className="label">
@@ -38,7 +35,15 @@ const LoginPage = () => {
               <div className="form-control mt-3">
                 <button className="green-btn">Login</button>
               </div>
-              <p className="my-3 text-base">New to PROGRAMMER FASHION? <Link to="/registration" className="link link-hover text-blue-600">Register Now</Link></p>
+              <p className="my-3 text-base">
+                New to PROGRAMMER FASHION?{" "}
+                <Link
+                  to="/registration"
+                  className="link link-hover text-blue-600"
+                >
+                  Register Now
+                </Link>
+              </p>
             </form>
           </div>
         </div>

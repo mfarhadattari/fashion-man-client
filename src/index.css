@@ -6,6 +6,9 @@
 .green-btn {
   @apply btn rounded-none bg-green-600 text-white hover:bg-slate-950;
 }
+.green-outline-btn {
+  @apply btn rounded-none border-gray-400 hover:border-gray-400 hover:bg-white hover:shadow-lg;
+}
 
 .green-input {
   @apply input border border-green-600 rounded-none;
