@@ -1,8 +1,9 @@
 import NavLink from "../../../components/NavLink";
-import { FaBars, FaCode } from "react-icons/fa";
+import { FaBars, FaCode, FaUserCircle } from "react-icons/fa";
 import ThemeToggle from "./../../../components/ThemeToggle";
 import useTheme from "../../../hooks/useTheme";
 import { Link } from "react-router-dom";
+import useAuth from "../../../hooks/useAuth";
 
 const navOptions = [
   {
@@ -29,7 +30,8 @@ const navOptions = [
 
 const NavigationBar = () => {
   const { isDark } = useTheme();
-  const user = false;
+  const { authUser } = useAuth();
+  const itemInCart = 0;
   return (
     <nav
       className={`navbar p-5 md:px-20 items-center sticky top-0 z-50 ${
@@ -90,14 +92,22 @@ const NavigationBar = () => {
                   d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
                 />
               </svg>
-              <span className="badge badge-sm indicator-item">8</span>
+              <span className="badge badge-sm indicator-item">
+                {itemInCart}
+              </span>
             </div>
           </label>
         </NavLink>
         <div className="dropdown dropdown-end ">
           <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
             <div className="w-10 rounded-full">
-              <img src="/icon.png" />
+              {authUser?.photoURL ? (
+                <img src={authUser?.photoURL} />
+              ) : (
+                <span className="text-4xl flex justify-center items-center w-full h-full">
+                  <FaUserCircle></FaUserCircle>
+                </span>
+              )}
             </div>
           </label>
           <ul
@@ -106,7 +116,7 @@ const NavigationBar = () => {
               isDark ? "bg-slate-800" : "bg-green-500"
             }`}
           >
-            {user ? (
+            {authUser ? (
               <>
                 <div className="flex justify-between items-center">
                   <NavLink to="/dashboard/profile">Profile</NavLink>
