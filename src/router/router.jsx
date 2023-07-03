@@ -7,6 +7,7 @@ import AboutPage from "../pages/Public/About/AboutPage";
 import ContractPage from "../pages/Public/Contract/ContractPage";
 import ProductDetailsPage from "../pages/Public/Shop/ProductDetailsPage";
 import DashboardLayout from "../layout/DashboardLayout";
+import LoginPage from "../pages/Public/Account/LoginPage";
 
 const router = createBrowserRouter([
   {
@@ -39,7 +40,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/login",
-        element: <>Login Page</>,
+        element: <LoginPage></LoginPage>,
       },
       {
         path: "/registration",

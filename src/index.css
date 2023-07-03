@@ -6,3 +6,7 @@
 .green-btn {
   @apply btn rounded-none bg-green-600 text-white hover:bg-slate-950;
 }
+
+.green-input {
+  @apply input border border-green-600 rounded-none;
+}
