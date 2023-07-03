@@ -13,12 +13,21 @@ const ProductCard = ({ productInfo }) => {
         </figure>
         <div className="card-body text-center pb-2">
           <h2 className="card-title">{productInfo?.title}</h2>
-          <p className="text-blue-700 text-xl font-bold">
-            {productInfo?.price} &#2547;
+          <p className="text-2xl flex gap-3 justify-center">
+            <span className="line-through text-red-500">
+              {productInfo?.price}&#2547;
+            </span>
+            <span className="text-blue-700">
+              {productInfo?.price -
+                (productInfo?.price * productInfo?.discount) / 100}
+              &#2547;
+            </span>
           </p>
         </div>
       </Link>
-      <button className="green-btn w-full">
+      <button
+        className="green-btn w-full"
+      >
         Add to cart
       </button>
     </div>

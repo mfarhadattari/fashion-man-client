@@ -41,9 +41,9 @@ const ProductDetailsPage = () => {
               <span>({product?.rating})</span>
             </div>
             <p className="text-2xl flex gap-3">
-              <span className="line-through">{product?.price} &#2547;</span>
+              <span className="line-through text-red-500">{product?.price}&#2547;</span>
               <span className="text-blue-700">
-                {product?.price - (product?.price * product?.discount) / 100}{" "}
+                {product?.price - (product?.price * product?.discount) / 100}
                 &#2547;
               </span>
             </p>
@@ -60,7 +60,11 @@ const ProductDetailsPage = () => {
                 </span>
               ))}
             </div>
-            <button className="green-btn w-[250px]">Add to Cart</button>
+            <button
+              className="green-btn w-[250px]"
+            >
+              Add to Cart
+            </button>
             <div className="text-lg">
               <p>Category: {product.category}</p>
               <p className="flex gap-3">
