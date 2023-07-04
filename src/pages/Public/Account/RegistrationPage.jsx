@@ -1,15 +1,18 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SocialConnect from "./SocialConnect";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import useAuth from "../../../hooks/useAuth";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import SuccessAlert from "../../../components/SuccessAlert";
 
 const RegistrationPage = () => {
   const [inputPassword, setInputPassword] = useState("");
   const [isPassMatched, setIsPassMatched] = useState();
   const [passwordShow, setPasswordShow] = useState(false);
   const { createAccount, updateInfo } = useAuth();
+
+  const navigate = useNavigate();
 
   const {
     register,
@@ -30,8 +33,10 @@ const RegistrationPage = () => {
         if (result.user) {
           updateInfo(`${firstName} ${lastName}`, photoURL)
             .then(() => {
-              console.log("Success");
-              reset()
+              SuccessAlert("Successfully Register!").then(() => {
+                reset();
+                navigate("/");
+              });
             })
             .catch((error) => {
               console.error(error.message);

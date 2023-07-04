@@ -2,6 +2,8 @@ import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import useAuth from "./../../../hooks/useAuth";
 import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
+import SuccessAlert from "../../../components/SuccessAlert";
+import { useNavigate } from "react-router-dom";
 
 const SocialConnect = () => {
   const { socialLogin } = useAuth();
@@ -9,10 +11,16 @@ const SocialConnect = () => {
   const googleProvider = new GoogleAuthProvider();
   const githubProvider = new GithubAuthProvider();
 
+  const navigate = useNavigate();
+
   const handelSocialLogin = (provider) => {
     socialLogin(provider)
       .then((result) => {
-        console.log(result.user);
+        if (result.user) {
+          SuccessAlert("Successfully Login!").then(() => {
+            navigate("/");
+          });
+        }
       })
       .catch((error) => {
         console.error(error.message);

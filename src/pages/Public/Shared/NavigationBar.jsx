@@ -4,6 +4,7 @@ import ThemeToggle from "./../../../components/ThemeToggle";
 import useTheme from "../../../hooks/useTheme";
 import { Link } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
+import SuccessAlert from "../../../components/SuccessAlert";
 
 const navOptions = [
   {
@@ -36,7 +37,7 @@ const NavigationBar = () => {
   const handelLogOut = () => {
     logout()
       .then(() => {
-        console.log("Logout Successfully");
+        SuccessAlert("Successfully Logout!");
       })
       .catch((error) => {
         console.error(error.message);

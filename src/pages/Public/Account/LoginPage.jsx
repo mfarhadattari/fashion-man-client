@@ -1,9 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SocialConnect from "./SocialConnect";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import useAuth from "../../../hooks/useAuth";
+import SuccessAlert from "../../../components/SuccessAlert";
 
 const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -15,11 +16,17 @@ const LoginPage = () => {
     formState: { errors },
   } = useForm();
 
+  const navigate = useNavigate();
+
   const handelLogin = (data) => {
     userLogin(data.email, data.password)
       .then((result) => {
-        console.log(result.user);
-        reset();
+        if (result.user) {
+          SuccessAlert("Successfully Login!").then(() => {
+            reset();
+            navigate("/");
+          });
+        }
       })
       .catch((error) => {
         console.log(error.message);
