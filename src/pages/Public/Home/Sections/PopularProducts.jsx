@@ -1,31 +1,40 @@
-import { useEffect, useState } from "react";
 import SectionTitle from "./../../../../components/SectionTitle";
 import ProductCard from "../../../../components/ProductCard";
 import { Link } from "react-router-dom";
+import useAxiosPublic from "../../../../hooks/useAxiosPublic";
+import { useQuery } from "react-query";
+import Loaders from "../../../../components/Loaders";
 const PopularProducts = () => {
-  const [products, setProducts] = useState([]);
+  const { axiosPublic } = useAxiosPublic();
 
-  useEffect(() => {
-    fetch("/products.json")
-      .then((res) => res.json())
-      .then((data) => {
-        setProducts(data);
-      });
-  }, []);
-
+  const { data: popularProducts = [], isLoading } = useQuery({
+    queryKey: ["popularProducts", axiosPublic],
+    queryFn: async () => {
+      const res = await axiosPublic.get("/popular-products");
+      return res.data;
+    },
+  });
   return (
     <section className="my-20">
       <SectionTitle
         title="Discover Popular Product"
         subtitle="Browse our top-selling & popular products!"
       ></SectionTitle>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-20 gap-5 p-5">
-        {products.map((product) => (
-          <ProductCard key={product._id} productInfo={product}></ProductCard>
-        ))}
-      </div>
+      {isLoading ? (
+        <div className="h-[300px] flex justify-center items-center">
+          <Loaders></Loaders>
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-20 gap-5 p-5">
+          {popularProducts.map((product) => (
+            <ProductCard key={product._id} productInfo={product}></ProductCard>
+          ))}
+        </div>
+      )}
       <div className="flex justify-center my-5">
-        <Link to='/shop' className="btn rounded-none w-[250px]">Shop Now</Link>
+        <Link to="/shop" className="btn rounded-none w-[250px]">
+          Shop Now
+        </Link>
       </div>
     </section>
   );

@@ -12,7 +12,7 @@ const ProductDetailsPage = () => {
   const { axiosPublic } = useAxiosPublic();
 
   const { data: product = {}, isLoading } = useQuery({
-    queryKey: ["teamMember", axiosPublic],
+    queryKey: ["product", axiosPublic],
     queryFn: async () => {
       const res = await axiosPublic.get(`/products/${params.id}`);
       return res.data;

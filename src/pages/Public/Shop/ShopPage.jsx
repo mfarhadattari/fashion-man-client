@@ -11,7 +11,7 @@ const ShopPage = () => {
   const { axiosPublic } = useAxiosPublic();
 
   const { data: products = [], isLoading } = useQuery({
-    queryKey: ["teamMember", axiosPublic],
+    queryKey: ["products", axiosPublic],
     queryFn: async () => {
       const res = await axiosPublic.get("/products");
       return res.data;
