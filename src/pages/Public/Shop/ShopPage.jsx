@@ -1,20 +1,22 @@
 import MenuCover from "../../../components/MenuCover";
 import banner from "../../../assets/images/banner.jpg";
-import { useEffect, useState } from "react";
 import ProductCard from "../../../components/ProductCard";
+import useAxiosPublic from "../../../hooks/useAxiosPublic";
+import { useQuery } from "react-query";
+import Loaders from "../../../components/Loaders";
 
 // TODO: Filtering, Searching, Pagination
 
 const ShopPage = () => {
-  const [products, setProducts] = useState([]);
+  const { axiosPublic } = useAxiosPublic();
 
-  useEffect(() => {
-    fetch("/products.json")
-      .then((res) => res.json())
-      .then((data) => {
-        setProducts(data);
-      });
-  }, []);
+  const { data: products = [], isLoading } = useQuery({
+    queryKey: ["teamMember", axiosPublic],
+    queryFn: async () => {
+      const res = await axiosPublic.get("/products");
+      return res.data;
+    },
+  });
 
   return (
     <main>
@@ -24,11 +26,20 @@ const ShopPage = () => {
         backgroundURL={banner}
       ></MenuCover>
       <section>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-20 gap-5 p-5">
-          {products.map((product) => (
-            <ProductCard key={product._id} productInfo={product}></ProductCard>
-          ))}
-        </div>
+        {isLoading ? (
+          <div className="h-[300px]">
+            <Loaders></Loaders>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-20 gap-5 p-5">
+            {products.map((product) => (
+              <ProductCard
+                key={product._id}
+                productInfo={product}
+              ></ProductCard>
+            ))}
+          </div>
+        )}
       </section>
     </main>
   );
