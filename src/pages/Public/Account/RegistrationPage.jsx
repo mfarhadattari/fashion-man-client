@@ -11,7 +11,7 @@ const RegistrationPage = () => {
   const [inputPassword, setInputPassword] = useState("");
   const [isPassMatched, setIsPassMatched] = useState();
   const [passwordShow, setPasswordShow] = useState(false);
-  const { createAccount, updateInfo } = useAuth();
+  const { createAccount, updateInfo, logout } = useAuth();
 
   const navigate = useNavigate();
 
@@ -36,7 +36,8 @@ const RegistrationPage = () => {
             .then(() => {
               SuccessAlert("Successfully Register!").then(() => {
                 reset();
-                navigate("/");
+                logout();
+                navigate("/login", { replace: true });
               });
             })
             .catch((error) => {

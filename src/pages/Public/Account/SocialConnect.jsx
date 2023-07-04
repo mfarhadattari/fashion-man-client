@@ -3,7 +3,7 @@ import { FaGithub } from "react-icons/fa";
 import useAuth from "./../../../hooks/useAuth";
 import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
 import SuccessAlert from "../../../components/SuccessAlert";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import FirebaseErrorAlert from "../../../components/FirebaseErrorAlert";
 
 const SocialConnect = () => {
@@ -13,13 +13,15 @@ const SocialConnect = () => {
   const githubProvider = new GithubAuthProvider();
 
   const navigate = useNavigate();
+  const location = useLocation();
+  const redirectFrom = location?.state?.from || "/";
 
   const handelSocialLogin = (provider) => {
     socialLogin(provider)
       .then((result) => {
         if (result.user) {
           SuccessAlert("Successfully Login!").then(() => {
-            navigate("/");
+            navigate(redirectFrom, { replace: true });
           });
         }
       })

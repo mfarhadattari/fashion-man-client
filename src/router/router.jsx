@@ -9,6 +9,7 @@ import ProductDetailsPage from "../pages/Public/Shop/ProductDetailsPage";
 import DashboardLayout from "../layout/DashboardLayout";
 import LoginPage from "../pages/Public/Account/LoginPage";
 import RegistrationPage from "../pages/Public/Account/RegistrationPage";
+import ProtectedRouter from "./ProtectedRouter";
 
 const router = createBrowserRouter([
   {
@@ -51,7 +52,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: <DashboardLayout></DashboardLayout>,
+    element: (
+      <ProtectedRouter>
+        <DashboardLayout></DashboardLayout>
+      </ProtectedRouter>
+    ),
     children: [
       {
         path: "/dashboard",

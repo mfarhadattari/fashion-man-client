@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialConnect from "./SocialConnect";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
@@ -18,6 +18,8 @@ const LoginPage = () => {
   } = useForm();
 
   const navigate = useNavigate();
+  const location = useLocation();
+  const redirectFrom = location?.state?.from || "/";
 
   const handelLogin = (data) => {
     userLogin(data.email, data.password)
@@ -25,7 +27,7 @@ const LoginPage = () => {
         if (result.user) {
           SuccessAlert("Successfully Login!").then(() => {
             reset();
-            navigate("/");
+            navigate(redirectFrom, { replace: true });
           });
         }
       })
