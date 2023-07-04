@@ -5,6 +5,7 @@ import { useState } from "react";
 import useAuth from "../../../hooks/useAuth";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import SuccessAlert from "../../../components/SuccessAlert";
+import FirebaseErrorAlert from "../../../components/FirebaseErrorAlert";
 
 const RegistrationPage = () => {
   const [inputPassword, setInputPassword] = useState("");
@@ -39,12 +40,12 @@ const RegistrationPage = () => {
               });
             })
             .catch((error) => {
-              console.error(error.message);
+              FirebaseErrorAlert(error.message);
             });
         }
       })
       .catch((error) => {
-        console.error(error.message);
+        FirebaseErrorAlert(error.message);
       });
   };
 

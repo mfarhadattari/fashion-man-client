@@ -4,6 +4,7 @@ import useAuth from "./../../../hooks/useAuth";
 import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
 import SuccessAlert from "../../../components/SuccessAlert";
 import { useNavigate } from "react-router-dom";
+import FirebaseErrorAlert from "../../../components/FirebaseErrorAlert";
 
 const SocialConnect = () => {
   const { socialLogin } = useAuth();
@@ -23,7 +24,7 @@ const SocialConnect = () => {
         }
       })
       .catch((error) => {
-        console.error(error.message);
+        FirebaseErrorAlert(error.message);
       });
   };
 

@@ -5,6 +5,7 @@ import useTheme from "../../../hooks/useTheme";
 import { Link } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 import SuccessAlert from "../../../components/SuccessAlert";
+import FirebaseErrorAlert from "../../../components/FirebaseErrorAlert";
 
 const navOptions = [
   {
@@ -40,7 +41,7 @@ const NavigationBar = () => {
         SuccessAlert("Successfully Logout!");
       })
       .catch((error) => {
-        console.error(error.message);
+        FirebaseErrorAlert(error.message);
       });
   };
 

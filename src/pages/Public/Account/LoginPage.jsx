@@ -5,6 +5,7 @@ import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import useAuth from "../../../hooks/useAuth";
 import SuccessAlert from "../../../components/SuccessAlert";
+import FirebaseErrorAlert from "../../../components/FirebaseErrorAlert";
 
 const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -29,7 +30,7 @@ const LoginPage = () => {
         }
       })
       .catch((error) => {
-        console.log(error.message);
+        FirebaseErrorAlert(error.message);
       });
   };
 
