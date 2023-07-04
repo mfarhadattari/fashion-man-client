@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 import SuccessAlert from "../../../components/SuccessAlert";
 import FirebaseErrorAlert from "../../../components/FirebaseErrorAlert";
+import ConfirmationAlert from "../../../components/ConfirmationAlert";
 
 const navOptions = [
   {
@@ -36,13 +37,17 @@ const NavigationBar = () => {
   const itemInCart = 0;
 
   const handelLogOut = () => {
-    logout()
-      .then(() => {
-        SuccessAlert("Successfully Logout!");
-      })
-      .catch((error) => {
-        FirebaseErrorAlert(error.message);
-      });
+    ConfirmationAlert("Sure want to Logout?").then((res) => {
+      if (res.isConfirmed) {
+        logout()
+          .then(() => {
+            SuccessAlert("Successfully Logout!");
+          })
+          .catch((error) => {
+            FirebaseErrorAlert(error.message);
+          });
+      }
+    });
   };
 
   return (
