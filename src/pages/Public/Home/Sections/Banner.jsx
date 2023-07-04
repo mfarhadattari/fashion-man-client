@@ -45,10 +45,11 @@ const Banner = () => {
               <h1 className="text-2xl md:text-6xl">
                 Stylist picks <br /> beat the heat
               </h1>
-              <Link to="shops">
-                <button className="btn btn-sm md:btn-md md:mt-5">
-                  Shop Now
-                </button>
+              <Link
+                to="/shop"
+                className="btn btn-sm md:btn-md rounded-none md:mt-5"
+              >
+                Shop Now
               </Link>
             </div>
           </div>
@@ -61,10 +62,11 @@ const Banner = () => {
               <h1 className="text-2xl md:text-6xl">
                 Stylist picks <br /> beat the heat
               </h1>
-              <Link to="shops">
-                <button className="btn btn-sm md:btn-md md:mt-5">
-                  Shop Now
-                </button>
+              <Link
+                to="/shop"
+                className="btn btn-sm md:btn-md rounded-none md:mt-5"
+              >
+                Shop Now
               </Link>
             </div>
           </div>
@@ -77,10 +79,11 @@ const Banner = () => {
               <h1 className="text-2xl md:text-6xl">
                 Stylist picks <br /> beat the heat
               </h1>
-              <Link to="shops">
-                <button className="btn btn-sm md:btn-md md:mt-5">
-                  Shop Now
-                </button>
+              <Link
+                to="/shop"
+                className="btn btn-sm md:btn-md rounded-none md:mt-5"
+              >
+                Shop Now
               </Link>
             </div>
           </div>

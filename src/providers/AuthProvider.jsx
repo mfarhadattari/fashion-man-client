@@ -16,15 +16,17 @@ const auth = getAuth(app);
 export const AuthContext = createContext();
 const AuthProvider = ({ children }) => {
   const [authUser, setAuthUser] = useState(null);
-  const [authLoading, setAuthLoading] = useState(false);
+  const [authLoading, setAuthLoading] = useState(true);
 
   //! ---------------- Create Account ---------------------//
   const createAccount = (email, password) => {
+    setAuthLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
   //! ------------------ Update info ----------------- //
   const updateInfo = (displayName, photoURL) => {
+    setAuthLoading(true);
     return updateProfile(auth.currentUser, {
       displayName: displayName,
       photoURL: photoURL,
@@ -33,16 +35,19 @@ const AuthProvider = ({ children }) => {
 
   //! -------------- Social Login -----------//
   const socialLogin = (provider) => {
+    setAuthLoading(true);
     return signInWithPopup(auth, provider);
   };
 
   // ! --------------- User Login --------------//
   const userLogin = (email, password) => {
+    setAuthLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
 
   // ! -------------- Logout User --------------- //
   const logout = () => {
+    setAuthLoading(true);
     return signOut(auth);
   };
 

@@ -50,6 +50,7 @@ const NavigationBar = () => {
       }`}
     >
       <div className="navbar-start">
+        {/* --------- Mobile and Tab Navigation  */}
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost text-3xl lg:hidden">
             <FaBars></FaBars>
@@ -67,6 +68,7 @@ const NavigationBar = () => {
             ))}
           </ul>
         </div>
+        {/* ----------- Title and Logo ---------- */}
         <Link to="/" className="text-2xl font-semibold uppercase ">
           <div className="flex flex-col">
             <h1>Programmer</h1>
@@ -76,6 +78,7 @@ const NavigationBar = () => {
           </div>
         </Link>
       </div>
+      {/* -------------------- Desktop Navbar --------- */}
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           {navOptions.map((option) => (
@@ -86,6 +89,7 @@ const NavigationBar = () => {
         </ul>
       </div>
       <div className="navbar-end">
+        {/* -------------------- Cart link ------------- */}
         <NavLink to="/cart">
           <label tabIndex={0} className="btn btn-ghost btn-circle">
             <div className="indicator">
@@ -109,6 +113,7 @@ const NavigationBar = () => {
             </div>
           </label>
         </NavLink>
+        {/* ----------------- Account Bar ---------- */}
         <div className="dropdown dropdown-end ">
           <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
             <div className="w-10 rounded-full">

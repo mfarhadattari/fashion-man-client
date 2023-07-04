@@ -3,37 +3,44 @@ import SocialConnect from "./SocialConnect";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import useAuth from "../../../hooks/useAuth";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const RegistrationPage = () => {
   const [inputPassword, setInputPassword] = useState("");
   const [isPassMatched, setIsPassMatched] = useState();
+  const [passwordShow, setPasswordShow] = useState(false);
   const { createAccount, updateInfo } = useAuth();
 
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
 
   const handelRegister = (data) => {
-    const { email, password, firstName, lastName, photoURL } = data;
-    if (isPassMatched) {
-      createAccount(email, password)
-        .then((result) => {
-          if (result.user) {
-            updateInfo(`${firstName} ${lastName}`, photoURL)
-              .then(() => {
-                console.log("Success");
-              })
-              .catch((error) => {
-                console.error(error.message);
-              });
-          }
-        })
-        .catch((error) => {
-          console.error(error.message);
-        });
+    const { email, password, firstName, lastName, photoURL, confirmPassword } =
+      data;
+    if (password !== confirmPassword) {
+      setIsPassMatched(false);
+      return;
     }
+    createAccount(email, password)
+      .then((result) => {
+        if (result.user) {
+          updateInfo(`${firstName} ${lastName}`, photoURL)
+            .then(() => {
+              console.log("Success");
+              reset()
+            })
+            .catch((error) => {
+              console.error(error.message);
+            });
+        }
+      })
+      .catch((error) => {
+        console.error(error.message);
+      });
   };
 
   const handleConfirmPassword = (e) => {
@@ -125,16 +132,51 @@ const RegistrationPage = () => {
                   <label className="label">
                     <span className="label-text">Password</span>
                   </label>
-                  <input
-                    type="password"
-                    placeholder="Password"
-                    name="password"
-                    onKeyUp={(e) => setInputPassword(e.target.value)}
-                    className="green-input w-full"
-                    {...register("password", { required: true })}
-                  />
+                  <div className="relative">
+                    <input
+                      type={passwordShow ? "text" : "password"}
+                      placeholder="Password"
+                      name="password"
+                      onKeyUp={(e) => setInputPassword(e.target.value)}
+                      className="green-input w-full"
+                      {...register("password", {
+                        required: true,
+                        minLength: 8,
+                        maxLength: 20,
+                        pattern:
+                          /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[^\w\s]).{8,}$/,
+                      })}
+                    />
+                    <button
+                      type="button"
+                      className="absolute top-4 right-3 text-xl"
+                      onClick={() => setPasswordShow(!passwordShow)}
+                    >
+                      {passwordShow ? (
+                        <FaEyeSlash></FaEyeSlash>
+                      ) : (
+                        <FaEye></FaEye>
+                      )}
+                    </button>
+                  </div>
                   {errors.password?.type === "required" && (
-                    <p className="error-message">Password is required</p>
+                    <p className="error-message">Password is Required</p>
+                  )}
+                  {errors.password?.type === "minLength" && (
+                    <p className="error-message">
+                      Password must be 8 character
+                    </p>
+                  )}
+                  {errors.password?.type === "maxLength" && (
+                    <p className="error-message">
+                      Password less then 20 character
+                    </p>
+                  )}
+                  {errors.password?.type === "pattern" && (
+                    <p className="error-message">
+                      Minimum one uppercase, one lowercase, one number and one
+                      special character
+                    </p>
                   )}
                 </div>
                 <div className="form-control w-full">
