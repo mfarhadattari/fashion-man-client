@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import SectionTitle from "../../../../components/SectionTitle";
 
 const OurTeams = () => {
-
   const [teamMembers, setTeamMembers] = useState([]);
 
   useEffect(() => {
