@@ -5,9 +5,11 @@ import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
 import SuccessAlert from "../../../components/SuccessAlert";
 import { useLocation, useNavigate } from "react-router-dom";
 import FirebaseErrorAlert from "../../../components/FirebaseErrorAlert";
+import useAxiosPublic from "../../../hooks/useAxiosPublic";
 
 const SocialConnect = () => {
   const { socialLogin } = useAuth();
+  const { axiosPublic } = useAxiosPublic();
 
   const googleProvider = new GoogleAuthProvider();
   const githubProvider = new GithubAuthProvider();
@@ -19,10 +21,20 @@ const SocialConnect = () => {
   const handelSocialLogin = (provider) => {
     socialLogin(provider)
       .then((result) => {
-        if (result.user) {
-          SuccessAlert("Successfully Login!").then(() => {
-            navigate(redirectFrom, { replace: true });
-          });
+        if (result.user && result.user.email) {
+          axiosPublic
+            .post("/create-user", {
+              displayName: result.user?.displayName,
+              email: result.user.email,
+              photoURL: result.user?.photoURL,
+            })
+            .then((res) => {
+              if (res.data.insertedId) {
+                SuccessAlert("Successfully Login!").then(() => {
+                  navigate(redirectFrom, { replace: true });
+                });
+              }
+            });
         }
       })
       .catch((error) => {

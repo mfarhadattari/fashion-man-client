@@ -10,6 +10,7 @@ import {
   updateProfile,
 } from "firebase/auth";
 import app from "../firebase/firebase.config";
+import useAxiosPublic from "./../hooks/useAxiosPublic";
 
 const auth = getAuth(app);
 
@@ -17,6 +18,7 @@ export const AuthContext = createContext();
 const AuthProvider = ({ children }) => {
   const [authUser, setAuthUser] = useState(null);
   const [authLoading, setAuthLoading] = useState(true);
+  const { axiosPublic } = useAxiosPublic();
 
   //! ---------------- Create Account ---------------------//
   const createAccount = (email, password) => {
@@ -58,16 +60,22 @@ const AuthProvider = ({ children }) => {
       if (user) {
         setAuthUser(user);
         setAuthLoading(false);
+        axiosPublic
+          .post("/generate-jwt", { email: user.email })
+          .then(({ data }) => {
+            localStorage.setItem("pf-user-token", data.token);
+          });
       } else {
         setAuthUser(null);
         setAuthLoading(false);
+        localStorage.removeItem("pf-user-token");
       }
     });
 
     return () => {
       unsubscribe();
     };
-  }, []);
+  }, [axiosPublic]);
 
   const authInfo = {
     authUser,

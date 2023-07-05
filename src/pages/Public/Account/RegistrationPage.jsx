@@ -6,12 +6,14 @@ import useAuth from "../../../hooks/useAuth";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import SuccessAlert from "../../../components/SuccessAlert";
 import FirebaseErrorAlert from "../../../components/FirebaseErrorAlert";
+import useAxiosPublic from "./../../../hooks/useAxiosPublic";
 
 const RegistrationPage = () => {
   const [inputPassword, setInputPassword] = useState("");
   const [isPassMatched, setIsPassMatched] = useState();
   const [passwordShow, setPasswordShow] = useState(false);
   const { createAccount, updateInfo, logout } = useAuth();
+  const { axiosPublic } = useAxiosPublic();
 
   const navigate = useNavigate();
 
@@ -34,11 +36,21 @@ const RegistrationPage = () => {
         if (result.user) {
           updateInfo(`${firstName} ${lastName}`, photoURL)
             .then(() => {
-              SuccessAlert("Successfully Register!").then(() => {
-                reset();
-                logout();
-                navigate("/login", { replace: true });
-              });
+              axiosPublic
+                .post("/create-user", {
+                  name: `${firstName} ${lastName}`,
+                  email,
+                  photoURL,
+                })
+                .then((res) => {
+                  if (res.data.insertedId) {
+                    SuccessAlert("Successfully Register!").then(() => {
+                      reset();
+                      logout();
+                      navigate("/login", { replace: true });
+                    });
+                  }
+                });
             })
             .catch((error) => {
               FirebaseErrorAlert(error.message);
