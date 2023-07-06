@@ -6,6 +6,7 @@ import router from "./router/router";
 import ThemeProvider from "./providers/ThemeProvider";
 import AuthProvider from "./providers/AuthProvider";
 import QueryProvider from "./providers/QueryProvider";
+import { Toaster } from "react-hot-toast";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -15,6 +16,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <div className="max-w-7xl mx-auto font-space-grotesk">
             <RouterProvider router={router}></RouterProvider>
           </div>
+          <Toaster />
         </QueryProvider>
       </AuthProvider>
     </ThemeProvider>

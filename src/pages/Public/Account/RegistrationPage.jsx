@@ -7,6 +7,16 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import SuccessAlert from "../../../components/SuccessAlert";
 import FirebaseErrorAlert from "../../../components/FirebaseErrorAlert";
 import useAxiosPublic from "./../../../hooks/useAxiosPublic";
+import { toast } from "react-hot-toast";
+import {
+  getDownloadURL,
+  getStorage,
+  ref,
+  uploadBytesResumable,
+} from "firebase/storage";
+import app from "../../../firebase/firebase.config";
+
+const storage = getStorage(app);
 
 const RegistrationPage = () => {
   const [inputPassword, setInputPassword] = useState("");
@@ -14,8 +24,20 @@ const RegistrationPage = () => {
   const [passwordShow, setPasswordShow] = useState(false);
   const { createAccount, updateInfo, logout } = useAuth();
   const { axiosPublic } = useAxiosPublic();
+  const [image, setImage] = useState(null);
+  const imgExt = image?.type?.split("/")[1];
 
   const navigate = useNavigate();
+
+  const handelFile = (e) => {
+    const imgFile = e.target.files[0];
+    if (imgFile?.size > 300000) {
+      setImage(null);
+      toast("Image must size less then 300kb");
+      return;
+    }
+    setImage(imgFile);
+  };
 
   const {
     register,
@@ -25,41 +47,54 @@ const RegistrationPage = () => {
   } = useForm();
 
   const handelRegister = (data) => {
-    const { email, password, firstName, lastName, photoURL, confirmPassword } =
-      data;
+    const { email, password, firstName, lastName, confirmPassword } = data;
+
     if (password !== confirmPassword) {
       setIsPassMatched(false);
       return;
     }
-    createAccount(email, password)
-      .then((result) => {
-        if (result.user) {
-          updateInfo(`${firstName} ${lastName}`, photoURL)
-            .then(() => {
-              axiosPublic
-                .post("/create-user", {
-                  name: `${firstName} ${lastName}`,
-                  email,
-                  photoURL,
-                })
-                .then((res) => {
-                  if (res.data.insertedId) {
-                    SuccessAlert("Successfully Register!").then(() => {
-                      reset();
-                      logout();
-                      navigate("/login", { replace: true });
+
+    const storageRef = ref(storage, `/users-avatar/${email}-avatar.${imgExt}`);
+    const uploadTask = uploadBytesResumable(storageRef, image);
+    uploadTask.on(
+      "state_changed",
+      (snapshot) => {
+        if (snapshot.bytesTransferred === snapshot.totalBytes) {
+          getDownloadURL(snapshot?.ref).then((url) => {
+            createAccount(email, password)
+              .then((result) => {
+                if (result.user) {
+                  updateInfo(`${firstName} ${lastName}`, url)
+                    .then(() => {
+                      axiosPublic
+                        .post("/create-user", {
+                          name: `${firstName} ${lastName}`,
+                          email,
+                          photoURL: url,
+                        })
+                        .then((res) => {
+                          if (res.data.insertedId) {
+                            SuccessAlert("Successfully Register!").then(() => {
+                              reset();
+                              logout();
+                              navigate("/login", { replace: true });
+                            });
+                          }
+                        });
+                    })
+                    .catch((error) => {
+                      FirebaseErrorAlert(error.message);
                     });
-                  }
-                });
-            })
-            .catch((error) => {
-              FirebaseErrorAlert(error.message);
-            });
+                }
+              })
+              .catch((error) => {
+                FirebaseErrorAlert(error.message);
+              });
+          });
         }
-      })
-      .catch((error) => {
-        FirebaseErrorAlert(error.message);
-      });
+      },
+      (error) => console.error(error.message)
+    );
   };
 
   const handleConfirmPassword = (e) => {
@@ -133,17 +168,14 @@ const RegistrationPage = () => {
                 </div>
                 <div className="form-control w-full">
                   <label className="label">
-                    <span className="label-text">Photo URL</span>
+                    <span className="label-text">Profile Photo</span>
                   </label>
                   <input
-                    type="url"
-                    placeholder="Photo URL"
-                    className="green-input w-full"
-                    {...register("photoURL", { required: true })}
+                    type="file"
+                    accept="image/jpeg, image/png"
+                    className="file-input w-full border-green-600"
+                    onChange={handelFile}
                   />
-                  {errors.photoURL?.type === "required" && (
-                    <p className="error-message">PhotoURL is required</p>
-                  )}
                 </div>
               </div>
               <div className="flex flex-col md:flex-row md:gap-5">
@@ -222,7 +254,10 @@ const RegistrationPage = () => {
                 </div>
               </div>
               <div className="form-control w-full mt-3">
-                <button className="green-btn" disabled={!isPassMatched}>
+                <button
+                  className="green-btn"
+                  disabled={!isPassMatched || !image}
+                >
                   Register
                 </button>
               </div>
