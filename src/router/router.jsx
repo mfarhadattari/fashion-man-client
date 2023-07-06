@@ -10,6 +10,7 @@ import DashboardLayout from "../layout/DashboardLayout";
 import LoginPage from "../pages/Public/Account/LoginPage";
 import RegistrationPage from "../pages/Public/Account/RegistrationPage";
 import ProtectedRouter from "./ProtectedRouter";
+import ProfilePage from "../pages/Dashboard/Profile/ProfilePage";
 
 const router = createBrowserRouter([
   {
@@ -64,7 +65,7 @@ const router = createBrowserRouter([
       },
       {
         path: "profile",
-        element: <>Profile Page</>,
+        element: <ProfilePage></ProfilePage>,
       },
       {
         path: "checkout",

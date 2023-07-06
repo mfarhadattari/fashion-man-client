@@ -56,9 +56,13 @@ const DashboardLayout = () => {
             onClick={() => setIsOpen(!isOpen)}
             className="lg:hidden absolute top-5 right-5 text-3xl btn btn-circle"
           >
-            <span className="animate-spin">{isOpen ? <FaXmark></FaXmark> : <FaGear></FaGear>}</span>
+            <span className="animate-spin">
+              {isOpen ? <FaXmark></FaXmark> : <FaGear></FaGear>}
+            </span>
           </button>
-          <Outlet></Outlet>
+          <div className="mt-10 lg:mt-0">
+            <Outlet></Outlet>
+          </div>
         </div>
       </div>
       <ScrollToTop
