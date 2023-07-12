@@ -57,7 +57,7 @@ const ContractPage = () => {
                   </label>
                   <textarea
                     placeholder="Message"
-                    className="textarea text-base border-1 border-green-600 rounded-none"
+                    className="green-textarea"
                     rows="4"
                   ></textarea>
                 </div>

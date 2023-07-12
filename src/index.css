@@ -10,8 +10,16 @@
   @apply btn rounded-none border-gray-400 hover:border-gray-400 hover:bg-white hover:shadow-lg;
 }
 
+.green-file-input {
+  @apply file-input rounded-none border-green-600 w-full;
+}
+
 .green-input {
-  @apply input border border-green-600 rounded-none;
+  @apply input border border-green-600 rounded-none w-full;
+}
+
+.green-textarea {
+  @apply textarea text-base border border-green-600 rounded-none;
 }
 
 .error-message {

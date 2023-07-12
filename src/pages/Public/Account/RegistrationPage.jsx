@@ -68,7 +68,7 @@ const RegistrationPage = () => {
                     .then(() => {
                       axiosPublic
                         .post("/create-user", {
-                          name: `${firstName} ${lastName}`,
+                          displayName: `${firstName} ${lastName}`,
                           email,
                           photoURL: url,
                         })
@@ -122,6 +122,7 @@ const RegistrationPage = () => {
             <h1 className="text-3xl text-center font-bold">Register now!</h1>
             <form className="mt-5" onSubmit={handleSubmit(handelRegister)}>
               <div className="flex flex-col md:flex-row md:gap-5">
+                {/* ------------- First Name ---------- */}
                 <div className="form-control w-full">
                   <label className="label">
                     <span className="label-text">First Name</span>
@@ -136,6 +137,7 @@ const RegistrationPage = () => {
                     <p className="error-message">First name is required</p>
                   )}
                 </div>
+                {/* ------------- Last Name ---------- */}
                 <div className="form-control w-full">
                   <label className="label">
                     <span className="label-text">Last Name</span>
@@ -152,6 +154,7 @@ const RegistrationPage = () => {
                 </div>
               </div>
               <div className="flex flex-col md:flex-row md:gap-5">
+                {/* ----------------- Email ----------------- */}
                 <div className="form-control w-full">
                   <label className="label">
                     <span className="label-text">Email</span>
@@ -166,6 +169,7 @@ const RegistrationPage = () => {
                     <p className="error-message">Email is required</p>
                   )}
                 </div>
+                {/* ----------------- Photo ----------------- */}
                 <div className="form-control w-full">
                   <label className="label">
                     <span className="label-text">Profile Photo</span>
@@ -173,12 +177,13 @@ const RegistrationPage = () => {
                   <input
                     type="file"
                     accept="image/jpeg, image/png"
-                    className="file-input w-full border-green-600"
+                    className="green-file-input"
                     onChange={handelFile}
                   />
                 </div>
               </div>
               <div className="flex flex-col md:flex-row md:gap-5">
+                {/* ----------------- Password ----------------- */}
                 <div className="form-control w-full">
                   <label className="label">
                     <span className="label-text">Password</span>
@@ -230,6 +235,7 @@ const RegistrationPage = () => {
                     </p>
                   )}
                 </div>
+                {/* ----------------- Confirm Password ----------------- */}
                 <div className="form-control w-full">
                   <label className="label">
                     <span className="label-text">Confirm Password</span>

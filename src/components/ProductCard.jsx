@@ -6,7 +6,7 @@ const ProductCard = ({ productInfo }) => {
       <Link to={`/shop/${productInfo?._id}`}>
         <figure>
           <img
-            className="w-full"
+            className="w-[300px] h-[200px]"
             src={productInfo?.image}
             alt={productInfo?.title}
           />
