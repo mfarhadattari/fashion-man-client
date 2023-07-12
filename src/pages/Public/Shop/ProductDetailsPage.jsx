@@ -8,12 +8,13 @@ import { useQuery } from "react-query";
 import useAxiosPublic from "../../../hooks/useAxiosPublic";
 import Loaders from "./../../../components/Loaders";
 import NoData from "../../../components/NoData";
-import { useState } from "react";
+import AddToCart from "../../../components/AddToCart";
+
+// TODO: product review from
 
 const ProductDetailsPage = () => {
   const params = useParams();
   const { axiosPublic } = useAxiosPublic();
-  const [reviews, setReviews] = useState([]);
 
   const { data: product = {}, isLoading } = useQuery({
     queryKey: ["product", axiosPublic],
@@ -22,9 +23,12 @@ const ProductDetailsPage = () => {
       return res.data;
     },
   });
-
-  axiosPublic.get(`/product-reviews/${params.id}`).then(({ data }) => {
-    setReviews(data);
+  const { data: reviews = [] } = useQuery({
+    queryKey: ["reviews", axiosPublic],
+    queryFn: async () => {
+      const res = await axiosPublic.get(`/product-reviews/${params.id}`);
+      return res.data;
+    },
   });
 
   return (
@@ -79,7 +83,9 @@ const ProductDetailsPage = () => {
                     </span>
                   ))}
                 </div>
-                <button className="green-btn w-[250px]">Add to Cart</button>
+                <div className="w-[250px]">
+                  <AddToCart productInfo={product} />
+                </div>
                 <div className="text-lg">
                   <p>Category: {product?.category}</p>
                   <p className="flex gap-3">
@@ -141,7 +147,9 @@ const ProductDetailsPage = () => {
                         <p className="text-lg text-justify mt-3">
                           {review.message}
                         </p>
-                        <p className="font-bold mt-5 text-xl">{review.username}</p>
+                        <p className="font-bold mt-5 text-xl">
+                          {review.username}
+                        </p>
                       </div>
                     </div>
                   ))}

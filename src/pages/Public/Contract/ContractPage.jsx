@@ -7,6 +7,8 @@ import {
   FaTwitter,
 } from "react-icons/fa";
 
+// TODO: Active contract form
+
 const ContractPage = () => {
   return (
     <main>

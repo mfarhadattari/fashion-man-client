@@ -6,6 +6,7 @@ import { useQuery } from "react-query";
 import Loaders from "../../../components/Loaders";
 
 // TODO: Filtering, Searching, Pagination
+// TODO: Product by category 
 
 const ShopPage = () => {
   const { axiosPublic } = useAxiosPublic();

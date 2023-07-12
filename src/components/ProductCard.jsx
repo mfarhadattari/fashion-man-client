@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import AddToCart from "./AddToCart";
 
 const ProductCard = ({ productInfo }) => {
   return (
@@ -25,11 +26,9 @@ const ProductCard = ({ productInfo }) => {
           </p>
         </div>
       </Link>
-      <button
-        className="green-btn w-full"
-      >
-        Add to cart
-      </button>
+      <div>
+        <AddToCart productInfo={productInfo} />
+      </div>
     </div>
   );
 };

@@ -3,6 +3,8 @@ import NewArrivals from "./Sections/NewArrivals";
 import PopularProducts from "./Sections/PopularProducts";
 import Services from "./Sections/Services";
 
+// TODO: Give us Review
+
 const HomePage = () => {
   return (
     <main>
