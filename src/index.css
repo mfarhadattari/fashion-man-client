@@ -25,3 +25,7 @@
 .error-message {
   @apply text-red-600 mt-2;
 }
+
+.loader-container{
+  @apply h-[300px] flex items-center;
+}

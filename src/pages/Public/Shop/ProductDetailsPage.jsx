@@ -6,10 +6,14 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import { useQuery } from "react-query";
 import useAxiosPublic from "../../../hooks/useAxiosPublic";
+import Loaders from "./../../../components/Loaders";
+import NoData from "../../../components/NoData";
+import { useState } from "react";
 
 const ProductDetailsPage = () => {
   const params = useParams();
   const { axiosPublic } = useAxiosPublic();
+  const [reviews, setReviews] = useState([]);
 
   const { data: product = {}, isLoading } = useQuery({
     queryKey: ["product", axiosPublic],
@@ -19,10 +23,18 @@ const ProductDetailsPage = () => {
     },
   });
 
+  axiosPublic.get(`/product-reviews/${params.id}`).then(({ data }) => {
+    setReviews(data);
+  });
+
   return (
     <main>
       {isLoading ? (
-        <div></div>
+        <div className="loader-container">
+          <Loaders />
+        </div>
+      ) : !product ? (
+        <NoData />
       ) : (
         <>
           <section className="my-10">
@@ -100,7 +112,7 @@ const ProductDetailsPage = () => {
               </TabPanel>
               <TabPanel>
                 <div className="p-5 md:p-10 flex flex-col gap-5">
-                  {product?.reviews?.map((review, idx) => (
+                  {reviews?.map((review, idx) => (
                     <div
                       key={idx}
                       className="md:flex items-center gap-10 even:flex-row-reverse"
@@ -113,13 +125,23 @@ const ProductDetailsPage = () => {
                         />
                       </div>
                       <div className="w-fit mx-auto md:w-2/3">
-                        <span className="text-4xl">
-                          <FaQuoteLeft></FaQuoteLeft>
-                        </span>
+                        <div className="flex justify-between">
+                          <span className="text-4xl">
+                            <FaQuoteLeft></FaQuoteLeft>
+                          </span>
+                          <div className="text-xl flex gap-5 items-center">
+                            <Rating
+                              value={review.rating}
+                              readOnly
+                              style={{ maxWidth: 150 }}
+                            />
+                            <span>({review.rating})</span>
+                          </div>
+                        </div>
                         <p className="text-lg text-justify mt-3">
                           {review.message}
                         </p>
-                        <p className="font-bold mt-5">{review.username}</p>
+                        <p className="font-bold mt-5 text-xl">{review.username}</p>
                       </div>
                     </div>
                   ))}
