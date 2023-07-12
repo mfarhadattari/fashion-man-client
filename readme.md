@@ -1,4 +1,4 @@
-# ----------------| PROGRAMMER FASHION |--------------------
+# -------------| PROGRAMMER FASHION |-------------
 ### A Programmer Fashion Collection Site with admin panel
 
 # URL 
