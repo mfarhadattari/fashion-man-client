@@ -3,10 +3,12 @@ import useAuth from "./../hooks/useAuth";
 import { toast } from "react-hot-toast";
 import useAxiosSecure from "./../hooks/useAxiosSecure";
 import { useState } from "react";
+import useTotalCart from "../hooks/useTotalCart";
 
 const AddToCart = ({ productInfo }) => {
   const { authUser, authLoading } = useAuth();
   const { axiosSecure } = useAxiosSecure();
+  const { refetch } = useTotalCart();
   const [loading, setLoading] = useState(false);
 
   const handelAddToCart = () => {
@@ -31,6 +33,7 @@ const AddToCart = ({ productInfo }) => {
     axiosSecure.post("/add-to-cart", cartInfo).then(({ data }) => {
       if (data.insertedId || data.modifiedCount > 0) {
         toast.success("Added Successfully!");
+        refetch();
       } else {
         toast.error("Something is wrong!");
       }
@@ -44,7 +47,11 @@ const AddToCart = ({ productInfo }) => {
       onClick={handelAddToCart}
       disabled={loading}
     >
-      {loading ? <span className="loading loading-spinner text-green-600"></span> : ""}
+      {loading ? (
+        <span className="loading loading-spinner text-green-600"></span>
+      ) : (
+        ""
+      )}
       Add to cart
     </button>
   );

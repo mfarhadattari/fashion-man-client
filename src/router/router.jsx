@@ -11,6 +11,7 @@ import LoginPage from "../pages/Public/Account/LoginPage";
 import RegistrationPage from "../pages/Public/Account/RegistrationPage";
 import ProtectedRouter from "./ProtectedRouter";
 import ProfilePage from "../pages/Dashboard/Profile/ProfilePage";
+import CartPage from "../pages/Public/Cart/CartPage";
 
 const router = createBrowserRouter([
   {
@@ -31,7 +32,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/cart",
-        element: <>Cart Page</>,
+        element: (
+          <ProtectedRouter>
+            <CartPage />
+          </ProtectedRouter>
+        ),
       },
       {
         path: "/contract",

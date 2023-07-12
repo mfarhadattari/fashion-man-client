@@ -7,6 +7,7 @@ import useAuth from "../../../hooks/useAuth";
 import SuccessAlert from "../../../components/SuccessAlert";
 import FirebaseErrorAlert from "../../../components/FirebaseErrorAlert";
 import ConfirmationAlert from "../../../components/ConfirmationAlert";
+import useTotalCart from "../../../hooks/useTotalCart";
 
 const navOptions = [
   {
@@ -33,8 +34,8 @@ const navOptions = [
 
 const NavigationBar = () => {
   const { isDark } = useTheme();
-  const { authUser, logout } = useAuth();
-  const itemInCart = 0;
+  const { authUser, logout} = useAuth();
+  const { itemInCart } = useTotalCart();
 
   const handelLogOut = () => {
     ConfirmationAlert("Sure want to Logout?").then((res) => {
