@@ -6,7 +6,7 @@ const useTotalCart = () => {
   const { axiosSecure } = useAxiosSecure();
   const { authUser, authLoading } = useAuth();
 
-  const { data: itemInCart = 0, refetch } = useQuery({
+  const { data: itemInCart = 0, refetch: refetchItemInCart } = useQuery({
     queryKey: ["itemInCart", axiosSecure, authUser],
     queryFn: async () => {
       if (!authUser || authLoading) {
@@ -18,7 +18,7 @@ const useTotalCart = () => {
     },
   });
 
-  return { itemInCart, refetch };
+  return { itemInCart, refetchItemInCart };
 };
 
 export default useTotalCart;

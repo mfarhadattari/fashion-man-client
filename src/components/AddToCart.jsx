@@ -9,7 +9,7 @@ import Swal from "sweetalert2";
 const AddToCart = ({ productInfo }) => {
   const { authUser, authLoading } = useAuth();
   const { axiosSecure } = useAxiosSecure();
-  const { refetch } = useTotalCart();
+  const { refetchItemInCart } = useTotalCart();
   const [loading, setLoading] = useState(false);
 
   const handelAddToCart = () => {
@@ -55,7 +55,7 @@ const AddToCart = ({ productInfo }) => {
         axiosSecure.post("/add-to-cart", cartInfo).then(({ data }) => {
           if (data.insertedId || data.modifiedCount > 0) {
             toast.success("Added Successfully!");
-            refetch();
+            refetchItemInCart();
           } else {
             toast.error("Something is wrong!");
           }

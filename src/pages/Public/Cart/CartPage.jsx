@@ -7,17 +7,36 @@ import { FaEye, FaMinus, FaPlus } from "react-icons/fa";
 import Loaders from "./../../../components/Loaders";
 import NoData from "./../../../components/NoData";
 import { Link } from "react-router-dom";
+import { toast } from "react-hot-toast";
+import useTotalCart from "./../../../hooks/useTotalCart";
 
 const CartPage = () => {
   const { axiosSecure } = useAxiosSecure();
+  const { refetchItemInCart } = useTotalCart();
 
-  const { data: carts = [], isLoading } = useQuery({
+  const {
+    data: carts = [],
+    isLoading,
+    refetch,
+  } = useQuery({
     queryKey: ["carts", axiosSecure],
     queryFn: async () => {
       const res = await axiosSecure.get("/my-cart");
       return await res.data;
     },
   });
+
+  const deleteCart = (id) => {
+    axiosSecure.delete(`/delete-cart/${id}`).then(({ data }) => {
+      if (data.deletedCount > 0) {
+        refetch();
+        refetchItemInCart();
+        toast.success("Deleted Successfully!");
+      } else {
+        toast.error("Something is wrong!");
+      }
+    });
+  };
 
   return (
     <main>
@@ -74,7 +93,7 @@ const CartPage = () => {
                     </td>
                     <th className="">
                       <div className="flex flex-col gap-2 justify-center items-center">
-                        <DeleteBtn />
+                        <DeleteBtn onClick={() => deleteCart(cart._id)} />
                         <Link
                           to={`/shop/${cart.productID}`}
                           className="btn btn-circle btn-sm text-xl btn-info text-white"
