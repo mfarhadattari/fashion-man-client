@@ -26,6 +26,7 @@ const CartPage = () => {
     },
   });
 
+  // ! Delete Cart
   const deleteCart = (id) => {
     axiosSecure.delete(`/delete-cart/${id}`).then(({ data }) => {
       if (data.deletedCount > 0) {
@@ -36,6 +37,17 @@ const CartPage = () => {
         toast.error("Something is wrong!");
       }
     });
+  };
+
+  // !Update Cart
+  const updateQuantity = (id, quantity) => {
+    axiosSecure
+      .patch(`/update-quantity/${id}`, { quantity: quantity })
+      .then(({ data }) => {
+        if (data.modifiedCount > 0) {
+          refetch();
+        }
+      });
   };
 
   return (
@@ -82,11 +94,20 @@ const CartPage = () => {
                       <p>Price: {cart.price}&#2547;</p>
                       <p>Size: {cart.size}</p>
                       <div className="flex justify-center items-center gap-2">
-                        <button>
+                        <button
+                          disabled={cart.quantity == 1}
+                          onClick={() =>
+                            updateQuantity(cart._id, cart.quantity - 1)
+                          }
+                        >
                           <FaMinus />
                         </button>
                         <p className="border w-[40px]">{cart.quantity}</p>
-                        <button>
+                        <button
+                          onClick={() =>
+                            updateQuantity(cart._id, cart.quantity + 1)
+                          }
+                        >
                           <FaPlus />
                         </button>
                       </div>
