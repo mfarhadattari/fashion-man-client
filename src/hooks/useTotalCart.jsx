@@ -9,11 +9,10 @@ const useTotalCart = () => {
   const { data: itemInCart = 0, refetch: refetchItemInCart } = useQuery({
     queryKey: ["itemInCart", axiosSecure, authUser],
     queryFn: async () => {
-      if (!authUser || authLoading) {
-        return 0;
-      } else {
+      const token = localStorage.getItem("pf-user-token");
+      if (authUser && !authLoading && token) {
         const res = await axiosSecure.get("/total-cart");
-        return res.data.totalCart;
+        return await res.data.totalCart;
       }
     },
   });
