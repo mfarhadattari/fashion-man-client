@@ -13,6 +13,7 @@ import ProtectedRouter from "./ProtectedRouter";
 import ProfilePage from "../pages/Dashboard/Profile/ProfilePage";
 import CartPage from "../pages/Public/Cart/CartPage";
 import CheckoutPage from "../pages/Public/Cart/CheckoutPage";
+import PaymentSuccessPage from "../pages/Public/Cart/PaymentSuccessPage";
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
             <CartPage />
           </ProtectedRouter>
         ),
+      },
+      {
+        path: "/payment-success",
+        element: <PaymentSuccessPage/>,
       },
       {
         path: "/contract",
@@ -71,7 +76,7 @@ const router = createBrowserRouter([
       },
       {
         path: "profile",
-        element: <ProfilePage/>,
+        element: <ProfilePage />,
       },
       {
         path: "checkout",

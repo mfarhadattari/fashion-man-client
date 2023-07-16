@@ -5,6 +5,7 @@ import NoData from "../../../components/NoData";
 import SectionTitle from "../../../components/SectionTitle";
 import { useForm } from "react-hook-form";
 import useAuth from "../../../hooks/useAuth";
+import moment from "moment";
 
 const CheckoutPage = () => {
   const { axiosSecure } = useAxiosSecure();
@@ -37,9 +38,24 @@ const CheckoutPage = () => {
       (totalAmount, cart) => cart.price * cart.quantity + totalAmount,
       0
     );
+
+    const products = carts.map((cart) => ({
+      cartId: cart._id,
+      productId: cart.productID,
+      productName: cart.title,
+      image: cart.image,
+      price: cart.price,
+      quantity: cart.quantity,
+      size: cart.size,
+    }));
+
     data.email = authUser?.email;
     data.totalAmount = totalAmount;
-    console.log(data);
+    data.products = products;
+    data.timeDate = moment().format("YYYY-MM-DD/HH:mm:ss");
+    axiosSecure.post("/initialize-payment", data).then(({ data }) => {
+      window.location.replace(data.url);
+    });
   };
 
   return (
