@@ -12,6 +12,7 @@ import RegistrationPage from "../pages/Public/Account/RegistrationPage";
 import ProtectedRouter from "./ProtectedRouter";
 import ProfilePage from "../pages/Dashboard/Profile/ProfilePage";
 import CartPage from "../pages/Public/Cart/CartPage";
+import CheckoutPage from "../pages/Public/Cart/CheckoutPage";
 
 const router = createBrowserRouter([
   {
@@ -70,11 +71,11 @@ const router = createBrowserRouter([
       },
       {
         path: "profile",
-        element: <ProfilePage></ProfilePage>,
+        element: <ProfilePage/>,
       },
       {
         path: "checkout",
-        element: <>Checkout Page</>,
+        element: <CheckoutPage />,
       },
       {
         path: "orders",
