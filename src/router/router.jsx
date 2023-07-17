@@ -14,6 +14,7 @@ import ProfilePage from "../pages/Dashboard/Profile/ProfilePage";
 import CartPage from "../pages/Public/Cart/CartPage";
 import CheckoutPage from "../pages/Public/Cart/CheckoutPage";
 import PaymentSuccessPage from "../pages/Public/Cart/PaymentSuccessPage";
+import PaymentFailedPage from "../pages/Public/Cart/PaymentFailed";
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
       {
         path: "/payment-success",
         element: <PaymentSuccessPage/>,
+      },
+      {
+        path: "/payment-fail",
+        element: <PaymentFailedPage/>,
       },
       {
         path: "/contract",
