@@ -16,6 +16,7 @@ import CheckoutPage from "../pages/Public/Cart/CheckoutPage";
 import PaymentSuccessPage from "../pages/Public/Cart/PaymentSuccessPage";
 import PaymentFailedPage from "../pages/Public/Cart/PaymentFailed";
 import OrderPage from "../pages/Public/Cart/OrderPage";
+import PaymentHistory from "../pages/Public/Cart/PaymentHistory";
 
 const router = createBrowserRouter([
   {
@@ -91,6 +92,10 @@ const router = createBrowserRouter([
       {
         path: "orders",
         element: <OrderPage />,
+      },
+      {
+        path: "payment-history",
+        element: <PaymentHistory />,
       },
     ],
   },
