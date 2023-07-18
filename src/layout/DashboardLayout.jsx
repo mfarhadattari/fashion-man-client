@@ -20,8 +20,8 @@ const options = [
     name: "Orders",
   },
   {
-    path: "/dashboard/checkout",
-    name: "Checkout",
+    path: "/dashboard/payment-history",
+    name: "Payment History",
   },
 ];
 

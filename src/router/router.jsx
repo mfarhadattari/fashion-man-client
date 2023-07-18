@@ -15,23 +15,24 @@ import CartPage from "../pages/Public/Cart/CartPage";
 import CheckoutPage from "../pages/Public/Cart/CheckoutPage";
 import PaymentSuccessPage from "../pages/Public/Cart/PaymentSuccessPage";
 import PaymentFailedPage from "../pages/Public/Cart/PaymentFailed";
+import OrderPage from "../pages/Public/Cart/OrderPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <MainLayout></MainLayout>,
+    element: <MainLayout />,
     children: [
       {
         path: "/",
-        element: <HomePage></HomePage>,
+        element: <HomePage />,
       },
       {
         path: "/shop",
-        element: <ShopPage></ShopPage>,
+        element: <ShopPage />,
       },
       {
         path: "/shop/:id",
-        element: <ProductDetailsPage></ProductDetailsPage>,
+        element: <ProductDetailsPage />,
       },
       {
         path: "/cart",
@@ -43,27 +44,27 @@ const router = createBrowserRouter([
       },
       {
         path: "/payment-success",
-        element: <PaymentSuccessPage/>,
+        element: <PaymentSuccessPage />,
       },
       {
         path: "/payment-fail",
-        element: <PaymentFailedPage/>,
+        element: <PaymentFailedPage />,
       },
       {
         path: "/contract",
-        element: <ContractPage></ContractPage>,
+        element: <ContractPage />,
       },
       {
         path: "/about",
-        element: <AboutPage></AboutPage>,
+        element: <AboutPage />,
       },
       {
         path: "/login",
-        element: <LoginPage></LoginPage>,
+        element: <LoginPage />,
       },
       {
         path: "/registration",
-        element: <RegistrationPage></RegistrationPage>,
+        element: <RegistrationPage />,
       },
     ],
   },
@@ -71,7 +72,7 @@ const router = createBrowserRouter([
     path: "/dashboard",
     element: (
       <ProtectedRouter>
-        <DashboardLayout></DashboardLayout>
+        <DashboardLayout />
       </ProtectedRouter>
     ),
     children: [
@@ -89,13 +90,13 @@ const router = createBrowserRouter([
       },
       {
         path: "orders",
-        element: <>Orders Page</>,
+        element: <OrderPage />,
       },
     ],
   },
   {
     path: "*",
-    element: <ErrorPage></ErrorPage>,
+    element: <ErrorPage />,
   },
 ]);
 
