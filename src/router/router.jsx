@@ -78,12 +78,13 @@ const router = createBrowserRouter([
     ),
     children: [
       {
-        path: "/dashboard",
-        element: <>Dashboard</>,
-      },
-      {
         path: "profile",
         element: <ProfilePage />,
+      },
+      // ! user route
+      {
+        path: "user-home",
+        element: <>User Home</>,
       },
       {
         path: "checkout",
@@ -96,6 +97,32 @@ const router = createBrowserRouter([
       {
         path: "payment-history",
         element: <PaymentHistory />,
+      },
+
+      // ! Admin route
+      {
+        path: "admin-home",
+        element: <>Admin Home</>,
+      },
+      {
+        path: "all-products",
+        element: <>All Products</>,
+      },
+      {
+        path: "add-product",
+        element: <>Add Product</>,
+      },
+      {
+        path: "all-customers",
+        element: <>All Customers</>,
+      },
+      {
+        path: "all-orders",
+        element: <>All Orders</>,
+      },
+      {
+        path: "all-payments",
+        element: <>All Payments</>,
       },
     ],
   },

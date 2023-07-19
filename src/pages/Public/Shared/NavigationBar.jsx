@@ -8,34 +8,39 @@ import SuccessAlert from "../../../components/SuccessAlert";
 import FirebaseErrorAlert from "../../../components/FirebaseErrorAlert";
 import ConfirmationAlert from "../../../components/ConfirmationAlert";
 import useTotalCart from "../../../hooks/useTotalCart";
-
-const navOptions = [
-  {
-    path: "/",
-    name: "Home",
-  },
-  {
-    path: "/shop",
-    name: "Shop",
-  },
-  {
-    path: "/about",
-    name: "About",
-  },
-  {
-    path: "/contract",
-    name: "Contract",
-  },
-  {
-    path: "/dashboard",
-    name: "Dashboard",
-  },
-];
+import useIsAdmin from "../../../hooks/useIsAdmin";
 
 const NavigationBar = () => {
   const { isDark } = useTheme();
-  const { authUser, logout} = useAuth();
+  const { authUser, logout } = useAuth();
   const { itemInCart } = useTotalCart();
+  const { isAdmin, isAdminLoading } = useIsAdmin();
+
+  const navOptions = [
+    {
+      path: "/",
+      name: "Home",
+    },
+    {
+      path: "/shop",
+      name: "Shop",
+    },
+    {
+      path: "/about",
+      name: "About",
+    },
+    {
+      path: "/contract",
+      name: "Contract",
+    },
+    {
+      path:
+        isAdmin && !isAdminLoading
+          ? "/dashboard/admin-home"
+          : "/dashboard/user-home",
+      name: "Dashboard",
+    },
+  ];
 
   const handelLogOut = () => {
     ConfirmationAlert("Sure want to Logout?").then((res) => {

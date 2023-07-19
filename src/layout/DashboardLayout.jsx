@@ -7,10 +7,10 @@ import { Outlet } from "react-router-dom";
 import { useState } from "react";
 import useIsAdmin from "../hooks/useIsAdmin";
 
-const options = [
+const userOptions = [
   {
-    path: "/dashboard",
-    name: "Home",
+    path: "/dashboard/user-home",
+    name: "User Home",
   },
   {
     path: "/dashboard/profile",
@@ -26,9 +26,41 @@ const options = [
   },
 ];
 
+const adminOptions = [
+  {
+    path: "/dashboard/admin-home",
+    name: "Admin Home",
+  },
+  {
+    path: "/dashboard/all-products",
+    name: "All Products",
+  },
+  {
+    path: "/dashboard/add-product",
+    name: "Add Product",
+  },
+  {
+    path: "/dashboard/all-customers",
+    name: "All Customers",
+  },
+  {
+    path: "/dashboard/all-orders",
+    name: "All Orders",
+  },
+  {
+    path: "/dashboard/all-payments",
+    name: "Payments",
+  },
+  {
+    path: "/dashboard/profile",
+    name: "Profile",
+  },
+];
+
 const DashboardLayout = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const {isAdmin, isAdminLoading} = useIsAdmin();
+  const { isAdmin, isAdminLoading } = useIsAdmin();
+  const options = isAdmin && !isAdminLoading ? adminOptions : userOptions;
   return (
     <div className="min-h-screen flex flex-col">
       <NavigationBar></NavigationBar>
