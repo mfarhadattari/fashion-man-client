@@ -5,6 +5,7 @@ import NavigationBar from "./../pages/Public/Shared/NavigationBar";
 import NavLink from "../components/NavLink";
 import { Outlet } from "react-router-dom";
 import { useState } from "react";
+import useIsAdmin from "../hooks/useIsAdmin";
 
 const options = [
   {
@@ -27,6 +28,7 @@ const options = [
 
 const DashboardLayout = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const {isAdmin, isAdminLoading} = useIsAdmin();
   return (
     <div className="min-h-screen flex flex-col">
       <NavigationBar></NavigationBar>
