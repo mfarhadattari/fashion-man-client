@@ -2,7 +2,7 @@ import useAuth from "../../../hooks/useAuth";
 import { FaEdit, FaEye } from "react-icons/fa";
 import { useQuery } from "react-query";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
-import Loaders from "./../../../components/Loaders";
+import Loaders from "../../../components/Loaders";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";

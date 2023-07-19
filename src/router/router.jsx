@@ -10,13 +10,14 @@ import DashboardLayout from "../layout/DashboardLayout";
 import LoginPage from "../pages/Public/Account/LoginPage";
 import RegistrationPage from "../pages/Public/Account/RegistrationPage";
 import ProtectedRouter from "./ProtectedRouter";
-import ProfilePage from "../pages/Dashboard/Profile/ProfilePage";
+import ProfilePage from "../pages/Public/Account/ProfilePage";
 import CartPage from "../pages/Public/Cart/CartPage";
-import CheckoutPage from "../pages/Public/Cart/CheckoutPage";
-import PaymentSuccessPage from "../pages/Public/Cart/PaymentSuccessPage";
+import CheckoutPage from "../pages/Public/Orders/CheckoutPage";
+import PaymentSuccessPage from "../pages/Public/Orders/PaymentSuccessPage";
 import PaymentFailedPage from "../pages/Public/Cart/PaymentFailed";
-import OrderPage from "../pages/Public/Cart/OrderPage";
+import OrderPage from "../pages/Public/Orders/OrderPage";
 import PaymentHistory from "../pages/Public/Cart/PaymentHistory";
+import UserHomePage from "../pages/Public/UserHome/UserHomePage";
 
 const router = createBrowserRouter([
   {
@@ -84,7 +85,7 @@ const router = createBrowserRouter([
       // ! user route
       {
         path: "user-home",
-        element: <>User Home</>,
+        element: <UserHomePage />,
       },
       {
         path: "checkout",
