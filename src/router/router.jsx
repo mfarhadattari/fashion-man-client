@@ -18,6 +18,7 @@ import PaymentFailedPage from "../pages/Public/Cart/PaymentFailed";
 import OrderPage from "../pages/Public/Orders/OrderPage";
 import PaymentHistory from "../pages/Public/Cart/PaymentHistory";
 import UserHomePage from "../pages/Public/UserHome/UserHomePage";
+import AdminOnlyRoute from "./AdminOnlyRoute";
 
 const router = createBrowserRouter([
   {
@@ -103,27 +104,51 @@ const router = createBrowserRouter([
       // ! Admin route
       {
         path: "admin-home",
-        element: <>Admin Home</>,
+        element: (
+          <AdminOnlyRoute>
+            <>Admin Home</>
+          </AdminOnlyRoute>
+        ),
       },
       {
         path: "all-products",
-        element: <>All Products</>,
+        element: (
+          <AdminOnlyRoute>
+            <>All Products</>
+          </AdminOnlyRoute>
+        ),
       },
       {
         path: "add-product",
-        element: <>Add Product</>,
+        element: (
+          <AdminOnlyRoute>
+            <>Add Product</>
+          </AdminOnlyRoute>
+        ),
       },
       {
         path: "all-customers",
-        element: <>All Customers</>,
+        element: (
+          <AdminOnlyRoute>
+            <>All Customers</>
+          </AdminOnlyRoute>
+        ),
       },
       {
         path: "all-orders",
-        element: <>All Orders</>,
+        element: (
+          <AdminOnlyRoute>
+            <>All Orders</>
+          </AdminOnlyRoute>
+        ),
       },
       {
         path: "all-payments",
-        element: <>All Payments</>,
+        element: (
+          <AdminOnlyRoute>
+            <>All Payments</>
+          </AdminOnlyRoute>
+        ),
       },
     ],
   },
