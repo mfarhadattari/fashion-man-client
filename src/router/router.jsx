@@ -19,6 +19,7 @@ import OrderPage from "../pages/Public/Orders/OrderPage";
 import PaymentHistory from "../pages/Public/Cart/PaymentHistory";
 import UserHomePage from "../pages/Public/UserHome/UserHomePage";
 import AdminOnlyRoute from "./AdminOnlyRoute";
+import AllProductsPage from "../pages/admin/Products/AllProductsPage";
 
 const router = createBrowserRouter([
   {
@@ -114,7 +115,7 @@ const router = createBrowserRouter([
         path: "all-products",
         element: (
           <AdminOnlyRoute>
-            <>All Products</>
+            <AllProductsPage/>
           </AdminOnlyRoute>
         ),
       },
