@@ -3,12 +3,13 @@ import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import MenuCover from "./../../../components/MenuCover";
 import banner from "../../../assets/images/banner.jpg";
 import DeleteBtn from "../../../components/DeleteBtn";
-import { FaEye, FaMinus, FaPlus } from "react-icons/fa";
+import {FaMinus, FaPlus } from "react-icons/fa";
 import Loaders from "./../../../components/Loaders";
 import NoData from "./../../../components/NoData";
 import { Link } from "react-router-dom";
 import { toast } from "react-hot-toast";
 import useTotalCart from "./../../../hooks/useTotalCart";
+import ShowBtn from "../../../components/ShowBtn";
 
 const CartPage = () => {
   const { axiosSecure } = useAxiosSecure();
@@ -115,11 +116,8 @@ const CartPage = () => {
                     <th className="">
                       <div className="flex flex-col gap-2 justify-center items-center">
                         <DeleteBtn onClick={() => deleteCart(cart._id)} />
-                        <Link
-                          to={`/shop/${cart.productID}`}
-                          className="btn btn-circle btn-sm text-xl btn-info text-white"
-                        >
-                          <FaEye></FaEye>
+                        <Link to={`/shop/${cart.productID}`}>
+                          <ShowBtn/>
                         </Link>
                       </div>
                     </th>
