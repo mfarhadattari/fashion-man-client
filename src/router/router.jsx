@@ -20,6 +20,7 @@ import PaymentHistory from "../pages/Public/Cart/PaymentHistory";
 import UserHomePage from "../pages/Public/UserHome/UserHomePage";
 import AdminOnlyRoute from "./AdminOnlyRoute";
 import AllProductsPage from "../pages/admin/Products/AllProductsPage";
+import AddProductPage from "../pages/admin/Products/AddProductPage";
 
 const router = createBrowserRouter([
   {
@@ -123,7 +124,7 @@ const router = createBrowserRouter([
         path: "add-product",
         element: (
           <AdminOnlyRoute>
-            <>Add Product</>
+            <AddProductPage/>
           </AdminOnlyRoute>
         ),
       },
