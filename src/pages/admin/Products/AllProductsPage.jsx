@@ -6,10 +6,11 @@ import DeleteBtn from "../../../components/DeleteBtn";
 import ShowBtn from "../../../components/ShowBtn";
 import EditBtn from "../../../components/EditBtn";
 import { Link } from "react-router-dom";
+import { toast } from "react-hot-toast";
 
 const AllProductsPage = () => {
   const { axiosSecure } = useAxiosSecure();
-  const { data: products = [], isLoading } = useQuery({
+  const { data: products = [], isLoading, refetch } = useQuery({
     queryKey: ["products", axiosSecure],
     queryFn: async () => {
       const res = await axiosSecure("/admin/all-products");
@@ -18,7 +19,12 @@ const AllProductsPage = () => {
   });
 
   const deleteProduct = (id) => {
-    console.log(id);
+    axiosSecure.delete(`/admin/delete-product/${id}`).then(({ data }) => {
+      if (data.deletedCount > 0) {
+        toast.success("Deleted Successfully!");
+        refetch()
+      }
+    });
   };
   return (
     <main className="mb-20">
