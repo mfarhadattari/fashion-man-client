@@ -33,7 +33,7 @@ const AddProductPage = () => {
     setProductSizesError(false);
   };
 
-  // ! product size handling
+  // ! product image handling
   const [image, setImage] = useState(null);
   const [imageError, setImageError] = useState(false);
   const imgExt = image?.type?.split("/")[1];
@@ -44,7 +44,7 @@ const AddProductPage = () => {
   };
 
   // ! from submit handler
-  const handelRegister = (data) => {
+  const handelAdd = (data) => {
     if (productSizes.length == 0) {
       setProductSizesError(true);
       return;
@@ -93,8 +93,8 @@ const AddProductPage = () => {
       <section className="my-10">
         <SectionTitle title="Add Product" subtitle="Add a product!" />
       </section>
-      <section>
-        <form className="mt-5" onSubmit={handleSubmit(handelRegister)}>
+      <section className="my-10">
+        <form className="mt-5" onSubmit={handleSubmit(handelAdd)}>
           <div className="flex flex-col md:flex-row md:gap-5">
             {/* ------------- Product Name ---------- */}
             <div className="form-control w-full">
