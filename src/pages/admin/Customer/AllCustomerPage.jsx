@@ -13,8 +13,6 @@ const AllCustomerPage = () => {
     },
   });
 
-  console.log(customers);
-
   return (
     <main>
       <section className="my-10">
