@@ -15,21 +15,27 @@ import {
 } from "firebase/storage";
 import app from "../../../firebase/firebase.config";
 import { FaCheckCircle } from "react-icons/fa";
+import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import { toast } from "react-hot-toast";
 
 const storage = getStorage(app);
 
 const UpdateProductPage = () => {
   const { axiosPublic } = useAxiosPublic();
+  const { axiosSecure } = useAxiosSecure();
   const { id } = useParams();
 
-  const { data: product, isLoading } = useQuery({
+  const {
+    data: product,
+    isLoading,
+    refetch,
+  } = useQuery({
     queryKey: ["product", axiosPublic],
     queryFn: async () => {
       const res = await axiosPublic.get(`/products/${id}`);
       return res.data;
     },
   });
-
 
   // ! product size handing
   const [productSizes, setProductSizes] = useState([]);
@@ -83,7 +89,17 @@ const UpdateProductPage = () => {
         .filter((feature) => feature.length !== 0),
       tags: data.tags.split("\n").filter((tag) => tag.length !== 0),
     };
-    console.log(productData);
+
+    axiosSecure
+      .patch(`/admin/update-product/${id}`, productData)
+      .then(({ data }) => {
+        if (data.modifiedCount > 0) {
+          toast.success("Successfully product updated!");
+          refetch();
+        } else {
+          toast.error("Something is wrong!");
+        }
+      });
   };
 
   return (
@@ -111,7 +127,7 @@ const UpdateProductPage = () => {
                   type="text"
                   placeholder="Product Name"
                   className="green-input w-full "
-                  defaultValue={product.title}
+                  defaultValue={product?.title}
                   {...register("title", { required: true })}
                 />
                 {errors.title?.type === "required" && (
@@ -126,7 +142,7 @@ const UpdateProductPage = () => {
                 <select
                   placeholder="Category"
                   className="green-select w-full"
-                  defaultValue={product.category}
+                  defaultValue={product?.category}
                   {...register("category", { required: true })}
                 >
                   {categories.map((item, idx) => (
@@ -149,7 +165,7 @@ const UpdateProductPage = () => {
                     name="size"
                     isMulti
                     options={sizes}
-                    defaultValue={product.size.map((eachSize) => ({
+                    defaultValue={product?.size?.map((eachSize) => ({
                       label: eachSize,
                       value: eachSize,
                     }))}
@@ -202,7 +218,7 @@ const UpdateProductPage = () => {
                   type="number"
                   placeholder="Product Price"
                   className="green-input w-full "
-                  defaultValue={product.price}
+                  defaultValue={product?.price}
                   min={0}
                   {...register("price", { required: true })}
                 />
@@ -219,7 +235,7 @@ const UpdateProductPage = () => {
                   type="number"
                   placeholder="Product Discount"
                   className="green-input w-full "
-                  defaultValue={product.discount}
+                  defaultValue={product?.discount}
                   min={0}
                   {...register("discount", { required: true })}
                 />
@@ -237,7 +253,7 @@ const UpdateProductPage = () => {
                 placeholder="Product Description"
                 className="green-textarea w-full "
                 rows={4}
-                defaultValue={product.description}
+                defaultValue={product?.description}
                 {...register("description", { required: true })}
               ></textarea>
               {errors.price?.type === "required" && (
@@ -257,7 +273,7 @@ const UpdateProductPage = () => {
                   placeholder="Product Featured. Write one down another."
                   className="green-textarea w-full "
                   defaultValue={product?.featured
-                    .map((feature) => `${feature} \n`)
+                    ?.map((feature) => `${feature} \n`)
                     .join("")}
                   {...register("featured", { required: true })}
                 ></textarea>
@@ -275,8 +291,7 @@ const UpdateProductPage = () => {
                 <textarea
                   placeholder="Product Tags. Write one down another."
                   className="green-textarea w-full "
-                  defaultValue={product?.tags
-                    .map((tag) => `${tag} \n`)
+                  defaultValue={product?.tags?.map((tag) => `${tag} \n`)
                     .join("")}
                   {...register("tags", { required: true })}
                 ></textarea>
