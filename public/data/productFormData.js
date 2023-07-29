@@ -1,0 +1,31 @@
+export const categories = [
+  "Shirts",
+  "T-Shirts",
+  "Pants",
+  "Jeans",
+  "Shorts",
+  "Sweaters",
+  "Jackets",
+  "Hoodies",
+  "Sneakers",
+  "Dress Shoes",
+  "Sandals",
+  "Boots",
+  "Watches",
+  "Belts",
+  "Hats",
+  "Socks",
+  "Ties",
+  "Backpacks",
+  "Gloves",
+  "Scarves",
+];
+
+export const sizes = [
+  { label: "XS", value: "XL" },
+  { label: "SM", value: "SM" },
+  { label: "MD", value: "MD" },
+  { label: "LG", value: "LG" },
+  { label: "XL", value: "XL" },
+  { label: "XXL", value: "XXL" },
+];
