@@ -21,6 +21,7 @@ import UserHomePage from "../pages/Public/UserHome/UserHomePage";
 import AdminOnlyRoute from "./AdminOnlyRoute";
 import AllProductsPage from "../pages/admin/Products/AllProductsPage";
 import AddProductPage from "../pages/admin/Products/AddProductPage";
+import UpdateProductPage from "../pages/admin/Products/UpdateProductPage";
 
 const router = createBrowserRouter([
   {
@@ -116,7 +117,7 @@ const router = createBrowserRouter([
         path: "all-products",
         element: (
           <AdminOnlyRoute>
-            <AllProductsPage/>
+            <AllProductsPage />
           </AdminOnlyRoute>
         ),
       },
@@ -124,7 +125,15 @@ const router = createBrowserRouter([
         path: "add-product",
         element: (
           <AdminOnlyRoute>
-            <AddProductPage/>
+            <AddProductPage />
+          </AdminOnlyRoute>
+        ),
+      },
+      {
+        path: "update-product/:id",
+        element: (
+          <AdminOnlyRoute>
+            <UpdateProductPage />
           </AdminOnlyRoute>
         ),
       },
