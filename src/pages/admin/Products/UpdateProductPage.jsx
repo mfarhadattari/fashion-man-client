@@ -61,7 +61,6 @@ const UpdateProductPage = () => {
       if (snapshot.bytesTransferred === snapshot.totalBytes) {
         getDownloadURL(snapshot?.ref).then((url) => {
           setImageURL(url);
-          console.log(url);
         });
       }
     });

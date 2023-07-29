@@ -15,7 +15,6 @@ const AllPaymentPage = () => {
     },
   });
 
-  console.log(payments);
   return (
     <main>
       <section className="my-10">

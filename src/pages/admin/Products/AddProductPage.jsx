@@ -84,7 +84,7 @@ const AddProductPage = () => {
           });
         }
       },
-      (error) => console.error(error.message)
+      (error) => toast.error(error.message)
     );
   };
 
