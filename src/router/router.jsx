@@ -22,6 +22,7 @@ import AdminOnlyRoute from "./AdminOnlyRoute";
 import AllProductsPage from "../pages/admin/Products/AllProductsPage";
 import AddProductPage from "../pages/admin/Products/AddProductPage";
 import UpdateProductPage from "../pages/admin/Products/UpdateProductPage";
+import AllCustomerPage from "../pages/admin/Customer/AllCustomerPage";
 
 const router = createBrowserRouter([
   {
@@ -141,7 +142,7 @@ const router = createBrowserRouter([
         path: "all-customers",
         element: (
           <AdminOnlyRoute>
-            <>All Customers</>
+            <AllCustomerPage/>
           </AdminOnlyRoute>
         ),
       },
