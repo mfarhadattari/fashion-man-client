@@ -63,6 +63,12 @@ const Footer = () => {
           </form>
         </div>
       </div>
+      <div className="mb-5">
+        <img
+          src="https://securepay.sslcommerz.com/public/image/SSLCommerz-Pay-With-logo-All-Size-01.png"
+          alt=""
+        />
+      </div>
       <div className="footer footer-center p-4 text-base-content border-t">
         <p>
           Copyright © {moment().format("YYYY")} - All right reserved by
