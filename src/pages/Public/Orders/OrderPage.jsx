@@ -70,7 +70,7 @@ const OrderPage = () => {
                     </td>
                     <th className="">
                       <div className="flex flex-col gap-2 justify-center items-center">
-                        <Link to={`/order/${order._id}`}>
+                        <Link to={`/dashboard/order/${order._id}`}>
                           <ShowBtn />
                         </Link>
                       </div>
