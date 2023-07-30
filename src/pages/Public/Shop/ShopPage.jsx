@@ -4,6 +4,7 @@ import ProductCard from "../../../components/ProductCard";
 import useAxiosPublic from "../../../hooks/useAxiosPublic";
 import { useQuery } from "react-query";
 import Loaders from "../../../components/Loaders";
+import PageTitle from "../../../components/PageTitle";
 
 // TODO: Filtering, Searching, Pagination
 // TODO: Product by category 
@@ -21,11 +22,12 @@ const ShopPage = () => {
 
   return (
     <main>
+      <PageTitle title="Shop | Programmer Fashion" />
       <MenuCover
         heading="Our Shop"
         subheading="Get your favorite product"
         backgroundURL={banner}
-      ></MenuCover>
+      />
       <section>
         {isLoading ? (
           <div className="h-[300px]">

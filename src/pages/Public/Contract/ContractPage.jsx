@@ -6,12 +6,14 @@ import {
   FaLinkedinIn,
   FaTwitter,
 } from "react-icons/fa";
+import PageTitle from "../../../components/PageTitle";
 
 // TODO: Active contract form
 
 const ContractPage = () => {
   return (
     <main>
+      <PageTitle title="Contract | Programmer Fashion" />
       <MenuCover
         backgroundURL={banner}
         heading="contact us"

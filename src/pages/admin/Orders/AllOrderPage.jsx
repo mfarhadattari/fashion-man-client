@@ -6,6 +6,7 @@ import ShowBtn from "../../../components/ShowBtn";
 import { Link } from "react-router-dom";
 import { formatTimeDate } from "../../../utils/utils";
 import { FaCheckCircle } from "react-icons/fa";
+import PageTitle from "../../../components/PageTitle";
 
 const AllOrderPage = () => {
   const { axiosSecure } = useAxiosSecure();
@@ -19,6 +20,7 @@ const AllOrderPage = () => {
 
   return (
     <main className="mb-20">
+      <PageTitle title="All Orders | Programmer Fashion" />
       <section className="my-10">
         <SectionTitle
           title="All Orders"

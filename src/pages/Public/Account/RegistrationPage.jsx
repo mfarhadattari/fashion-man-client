@@ -15,6 +15,7 @@ import {
   uploadBytesResumable,
 } from "firebase/storage";
 import app from "../../../firebase/firebase.config";
+import PageTitle from "../../../components/PageTitle";
 
 const storage = getStorage(app);
 
@@ -113,6 +114,7 @@ const RegistrationPage = () => {
 
   return (
     <main>
+      <PageTitle title="Register | Programmer Fashion" />
       <section>
         <div className="flex flex-col-reverse md:flex-row w-full p-5 gap-10 mx-auto">
           <div className="p-5 w-full md:w-2/4">

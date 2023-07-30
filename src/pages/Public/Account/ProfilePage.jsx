@@ -16,6 +16,7 @@ import {
 import FirebaseErrorAlert from "../../../components/FirebaseErrorAlert";
 import app from "../../../firebase/firebase.config";
 import SuccessAlert from "../../../components/SuccessAlert";
+import PageTitle from "../../../components/PageTitle";
 
 const storage = getStorage(app);
 
@@ -97,6 +98,7 @@ const ProfilePage = () => {
 
   return (
     <main className="p-5">
+      <PageTitle title="Profile | Programmer Fashion" />
       <h1 className="text-3xl  mt-5">
         Welcome {authUser.displayName}! How are you today?
       </h1>

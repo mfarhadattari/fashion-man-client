@@ -7,6 +7,7 @@ import ShowBtn from "../../../components/ShowBtn";
 import EditBtn from "../../../components/EditBtn";
 import { Link } from "react-router-dom";
 import { toast } from "react-hot-toast";
+import PageTitle from "../../../components/PageTitle";
 
 const AllProductsPage = () => {
   const { axiosSecure } = useAxiosSecure();
@@ -28,6 +29,7 @@ const AllProductsPage = () => {
   };
   return (
     <main className="mb-20">
+      <PageTitle title="All PRoducts | Programmer Fashion" />
       <section className="mt-10">
         <SectionTitle title="All Products" subtitle="List of all products!" />
       </section>

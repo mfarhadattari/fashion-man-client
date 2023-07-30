@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 import { toast } from "react-hot-toast";
 import useTotalCart from "./../../../hooks/useTotalCart";
 import ShowBtn from "../../../components/ShowBtn";
+import PageTitle from "../../../components/PageTitle";
 
 const CartPage = () => {
   const { axiosSecure } = useAxiosSecure();
@@ -53,6 +54,7 @@ const CartPage = () => {
 
   return (
     <main>
+      <PageTitle title="Cart | Programmer Fashion" />
       <MenuCover
         heading="Cart"
         subheading="Discover your cart!"

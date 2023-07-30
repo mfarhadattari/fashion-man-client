@@ -17,6 +17,7 @@ import app from "../../../firebase/firebase.config";
 import { FaCheckCircle } from "react-icons/fa";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { toast } from "react-hot-toast";
+import PageTitle from "../../../components/PageTitle";
 
 const storage = getStorage(app);
 
@@ -103,6 +104,7 @@ const UpdateProductPage = () => {
 
   return (
     <main>
+      <PageTitle title="Update Product | Programmer Fashion" />
       <section className="my-10">
         <SectionTitle
           title="Update Product"

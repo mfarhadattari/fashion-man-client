@@ -7,9 +7,11 @@ import ThemeProvider from "./providers/ThemeProvider";
 import AuthProvider from "./providers/AuthProvider";
 import QueryProvider from "./providers/QueryProvider";
 import { Toaster } from "react-hot-toast";
+import {HelmetProvider} from 'react-helmet-async'
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
+    <HelmetProvider>
     <ThemeProvider>
       <AuthProvider>
         <QueryProvider>
@@ -20,5 +22,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         </QueryProvider>
       </AuthProvider>
     </ThemeProvider>
+    </HelmetProvider>
   </React.StrictMode>
 );

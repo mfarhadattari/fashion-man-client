@@ -4,6 +4,7 @@ import useAxiosSecure from "./../../../hooks/useAxiosSecure";
 import Loaders from "../../../components/Loaders";
 import { FaCoins, FaShippingFast, FaShoppingCart } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import PageTitle from "../../../components/PageTitle";
 
 const UserHomePage = () => {
   const { axiosSecure } = useAxiosSecure();
@@ -17,6 +18,7 @@ const UserHomePage = () => {
 
   return (
     <main>
+      <PageTitle title="User Home | Programmer Fashion" />
       <section className="my-10">
         <SectionTitle title="User Home" subtitle="See Overview!" />
       </section>

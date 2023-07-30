@@ -3,6 +3,7 @@ import useAxiosSecure from "./../../../hooks/useAxiosSecure";
 import { useQuery } from "react-query";
 import Loaders from "./../../../components/Loaders";
 import { formatTimeDate } from "./../../../utils/utils";
+import PageTitle from "../../../components/PageTitle";
 
 const AllPaymentPage = () => {
   const { axiosSecure } = useAxiosSecure();
@@ -17,6 +18,7 @@ const AllPaymentPage = () => {
 
   return (
     <main>
+      <PageTitle title="All Payments | Programmer Fashion" />
       <section className="my-10">
         <SectionTitle title="All Payments" subtitle="See all payment data!" />
       </section>

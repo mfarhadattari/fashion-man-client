@@ -6,6 +6,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import useAuth from "../../../hooks/useAuth";
 import SuccessAlert from "../../../components/SuccessAlert";
 import FirebaseErrorAlert from "../../../components/FirebaseErrorAlert";
+import PageTitle from "../../../components/PageTitle";
 
 const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -38,6 +39,7 @@ const LoginPage = () => {
 
   return (
     <main>
+      <PageTitle title="Login | Programmer Fashion" />
       <section className="my-10">
         <div className="flex flex-col-reverse md:flex-row w-full lg:w-3/4 p-5 gap-10 mx-auto">
           <div className="p-5 w-full">

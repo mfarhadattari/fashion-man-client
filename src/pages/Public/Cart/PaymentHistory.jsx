@@ -1,5 +1,6 @@
 import Loaders from "../../../components/Loaders";
 import NoData from "../../../components/NoData";
+import PageTitle from "../../../components/PageTitle";
 import SectionTitle from "../../../components/SectionTitle";
 import { formatTimeDate } from "../../../utils/utils";
 import useAxiosSecure from "./../../../hooks/useAxiosSecure";
@@ -16,6 +17,7 @@ const PaymentHistory = () => {
   });
   return (
     <main>
+      <PageTitle title="Payment History | Programmer Fashion" />
       <section className="my-10">
         <SectionTitle
           title="Payment History"

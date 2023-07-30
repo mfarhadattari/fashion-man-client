@@ -3,6 +3,7 @@ import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import SectionTitle from "./../../../components/SectionTitle";
 import Loaders from "../../../components/Loaders";
 import { Link } from "react-router-dom";
+import PageTitle from "../../../components/PageTitle";
 const AllCustomerPage = () => {
   const { axiosSecure } = useAxiosSecure();
   const { data: customers = [], isLoading } = useQuery({
@@ -15,6 +16,7 @@ const AllCustomerPage = () => {
 
   return (
     <main>
+      <PageTitle title="Customers | Programmer Fashion" />
       <section className="my-10">
         <SectionTitle title="All Customer" subtitle="See our customer!" />
       </section>

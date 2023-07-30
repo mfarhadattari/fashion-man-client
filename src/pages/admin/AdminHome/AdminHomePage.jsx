@@ -11,6 +11,7 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import LineChartComponent from "./LineChartComponent";
+import PageTitle from "../../../components/PageTitle";
 
 const AdminHomePage = () => {
   const { axiosSecure } = useAxiosSecure();
@@ -24,6 +25,7 @@ const AdminHomePage = () => {
 
   return (
     <main className="mb-20">
+      <PageTitle title="Admin Home | Programmer Fashion" />
       <section className="my-10">
         <SectionTitle
           title="Admin Home Page"

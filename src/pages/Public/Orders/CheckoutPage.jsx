@@ -6,6 +6,7 @@ import SectionTitle from "../../../components/SectionTitle";
 import { useForm } from "react-hook-form";
 import useAuth from "../../../hooks/useAuth";
 import moment from "moment";
+import PageTitle from "../../../components/PageTitle";
 
 const CheckoutPage = () => {
   const { axiosSecure } = useAxiosSecure();
@@ -60,6 +61,7 @@ const CheckoutPage = () => {
 
   return (
     <main>
+      <PageTitle title="Checkout | Programmer Fashion" />
       <section className="my-10">
         <SectionTitle title="Checkout" subtitle="Place you order!" />
       </section>

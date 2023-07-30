@@ -6,6 +6,7 @@ import NoData from "../../../components/NoData";
 import { Link } from "react-router-dom";
 import { formatTimeDate } from "../../../utils/utils";
 import ShowBtn from "../../../components/ShowBtn";
+import PageTitle from "../../../components/PageTitle";
 
 const OrderPage = () => {
   const { axiosSecure } = useAxiosSecure();
@@ -19,6 +20,7 @@ const OrderPage = () => {
 
   return (
     <main>
+      <PageTitle title="My Orders | Programmer Fashion" />
       <section className="my-10">
         <SectionTitle title="My Orders" subtitle="See Your Orders!" />
       </section>

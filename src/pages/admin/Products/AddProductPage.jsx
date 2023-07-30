@@ -12,6 +12,7 @@ import {
 import app from "../../../firebase/firebase.config";
 import useAxiosSecure from "./../../../hooks/useAxiosSecure";
 import { toast } from "react-hot-toast";
+import PageTitle from "../../../components/PageTitle";
 
 const storage = getStorage(app);
 const AddProductPage = () => {
@@ -90,6 +91,7 @@ const AddProductPage = () => {
 
   return (
     <main>
+      <PageTitle title="Add Product | Programmer Fashion" />
       <section className="my-10">
         <SectionTitle title="Add Product" subtitle="Add a product!" />
       </section>

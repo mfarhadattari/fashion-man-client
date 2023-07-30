@@ -9,6 +9,7 @@ import useAxiosPublic from "../../../hooks/useAxiosPublic";
 import Loaders from "./../../../components/Loaders";
 import NoData from "../../../components/NoData";
 import AddToCart from "../../../components/AddToCart";
+import PageTitle from "../../../components/PageTitle";
 
 // TODO: product review from
 
@@ -33,6 +34,7 @@ const ProductDetailsPage = () => {
 
   return (
     <main>
+      <PageTitle title="Product Details | Programmer Fashion" />
       {isLoading ? (
         <div className="loader-container">
           <Loaders />
