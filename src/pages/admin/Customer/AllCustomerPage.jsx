@@ -4,6 +4,7 @@ import SectionTitle from "./../../../components/SectionTitle";
 import Loaders from "../../../components/Loaders";
 import { Link } from "react-router-dom";
 import PageTitle from "../../../components/PageTitle";
+import ShowBtn from "./../../../components/ShowBtn";
 const AllCustomerPage = () => {
   const { axiosSecure } = useAxiosSecure();
   const { data: customers = [], isLoading } = useQuery({
@@ -70,12 +71,9 @@ const AllCustomerPage = () => {
                       </p>
                     </td>
                     <th>
-                      <div className="flex flex-col gap-2">
-                        <Link className="btn btn-sm btn-success text-white">
-                          View Cart
-                        </Link>
-                        <Link className="btn btn-sm">View Order</Link>
-                      </div>
+                      <Link to={`/dashboard/customer/${customer._id}`}>
+                        <ShowBtn />
+                      </Link>
                     </th>
                   </tr>
                 ))}

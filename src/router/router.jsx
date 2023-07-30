@@ -26,6 +26,7 @@ import AllCustomerPage from "../pages/admin/Customer/AllCustomerPage";
 import AllOrderPage from "../pages/admin/Orders/AllOrderPage";
 import AllPaymentPage from "../pages/admin/Payments/AllPaymentPage";
 import AdminHomePage from "../pages/admin/AdminHome/AdminHomePage";
+import CustomerDetailsPage from "../pages/admin/Customer/CustomerDetailsPage";
 
 const router = createBrowserRouter([
   {
@@ -146,6 +147,14 @@ const router = createBrowserRouter([
         element: (
           <AdminOnlyRoute>
             <AllCustomerPage />
+          </AdminOnlyRoute>
+        ),
+      },
+      {
+        path: "customer/:id",
+        element: (
+          <AdminOnlyRoute>
+            <CustomerDetailsPage />
           </AdminOnlyRoute>
         ),
       },
