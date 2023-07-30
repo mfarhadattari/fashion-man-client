@@ -7,16 +7,32 @@ import { Link } from "react-router-dom";
 import { formatTimeDate } from "../../../utils/utils";
 import { FaCheckCircle } from "react-icons/fa";
 import PageTitle from "../../../components/PageTitle";
+import { toast } from "react-hot-toast";
 
 const AllOrderPage = () => {
   const { axiosSecure } = useAxiosSecure();
-  const { data: orders = [], isLoading } = useQuery({
+  const {
+    data: orders = [],
+    isLoading,
+    refetch,
+  } = useQuery({
     queryKey: ["orders", axiosSecure],
     queryFn: async () => {
       const res = await axiosSecure.get("/admin/all-order");
       return res.data;
     },
   });
+
+  const handelApproveOrder = (id) => {
+    axiosSecure.patch(`/admin/approve-order/${id}`).then(({ data }) => {
+      if (data.modifiedCount) {
+        toast.success("Approve Successfully!");
+        refetch();
+      } else {
+        toast.error("Somethings went wrong!");
+      }
+    });
+  };
 
   return (
     <main className="mb-20">
@@ -77,9 +93,14 @@ const AllOrderPage = () => {
                         <Link to={`/dashboard/order/${order._id}`}>
                           <ShowBtn />
                         </Link>
-                        <button className="btn btn-sm text-xl btn-outline text-green-500 btn-circle">
-                          <FaCheckCircle />
-                        </button>
+                        {order.status === "Paid" && (
+                          <button
+                            onClick={() => handelApproveOrder(order._id)}
+                            className="btn btn-sm text-xl btn-outline text-green-500 btn-circle"
+                          >
+                            <FaCheckCircle />
+                          </button>
+                        )}
                       </div>
                     </th>
                   </tr>
