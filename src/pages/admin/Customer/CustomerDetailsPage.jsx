@@ -6,7 +6,7 @@ const CustomerDetailsPage = () => {
   const { id } = useParams();
   return (
     <main className="mb-20">
-      <PageTitle title="Customer Details" />
+      <PageTitle title="Customer Details | Programmer Fashion" />
       <section className="my-10">
         <SectionTitle
           title="Customer Details"

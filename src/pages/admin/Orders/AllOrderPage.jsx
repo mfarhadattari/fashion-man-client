@@ -74,7 +74,7 @@ const AllOrderPage = () => {
                     </td>
                     <th className="">
                       <div className="flex flex-col gap-2 justify-center items-center">
-                        <Link to={`/order/${order._id}`}>
+                        <Link to={`/dashboard/order/${order._id}`}>
                           <ShowBtn />
                         </Link>
                         <button className="btn btn-sm text-xl btn-outline text-green-500 btn-circle">

@@ -27,6 +27,7 @@ import AllOrderPage from "../pages/admin/Orders/AllOrderPage";
 import AllPaymentPage from "../pages/admin/Payments/AllPaymentPage";
 import AdminHomePage from "../pages/admin/AdminHome/AdminHomePage";
 import CustomerDetailsPage from "../pages/admin/Customer/CustomerDetailsPage";
+import OrderDetailsPage from "../pages/admin/Orders/OrderDetailsPage";
 
 const router = createBrowserRouter([
   {
@@ -90,6 +91,10 @@ const router = createBrowserRouter([
       {
         path: "profile",
         element: <ProfilePage />,
+      },
+      {
+        path: "order/:id",
+        element: <OrderDetailsPage />,
       },
       // ! user route
       {
