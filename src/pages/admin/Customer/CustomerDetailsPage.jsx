@@ -32,7 +32,25 @@ const CustomerDetailsPage = () => {
           <Loaders />
         </div>
       ) : (
-        <section></section>
+        <section>
+          <div className="flex flex-col md:flex-row items-center gap-10">
+            <div className="avatar">
+              <div className="w-40 rounded">
+                <img src={customerDetails?.userInfo?.photoURL} />
+              </div>
+            </div>
+            <div className="font-medium">
+              <h1>Name: {customerDetails?.userInfo?.displayName}</h1>
+              <p>Email: {customerDetails?.userInfo?.email}</p>
+              <p>Mobile: {customerDetails?.userInfo?.phone}</p>
+              <p>Adress: {customerDetails?.userInfo?.address}</p>
+              <p>
+                {customerDetails?.userInfo?.city},{" "}
+                {customerDetails?.userInfo?.country}
+              </p>
+            </div>
+          </div>
+        </section>
       )}
     </main>
   );
