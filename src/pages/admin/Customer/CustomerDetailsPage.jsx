@@ -35,8 +35,6 @@ const CustomerDetailsPage = () => {
     });
   };
 
-  console.log(customerDetails);
-
   return (
     <main className="mb-20">
       <PageTitle title="Customer Details | Programmer Fashion" />
@@ -139,6 +137,42 @@ const CustomerDetailsPage = () => {
                               </button>
                             )}
                           </div>
+                        </th>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div className="mt-10">
+              <h1 className="text-center text-xl font-bold uppercase border-b-4 border-gray-600 w-fit mx-auto">
+                Customer Cart
+              </h1>
+              <div className="overflow-x-auto mt-5  border">
+                <table className="table">
+                  <tbody>
+                    {customerDetails?.cartInfo?.map((cart, idx) => (
+                      <tr key={cart._id}>
+                        <th>{idx + 1}</th>
+                        <td>
+                          <div className="avatar">
+                            <div className="w-20 h-20">
+                              <img src={cart.image} alt={cart.title} />
+                            </div>
+                          </div>
+                        </td>
+                        <td className="md:w-2/6 lg:w-1/4">
+                          <h1>{cart.title}</h1>
+                        </td>
+                        <td className="text-center space-y-1">
+                          <p>Price: {cart.price}&#2547;</p>
+                          <p>Size: {cart.size}</p>
+                          <p>Quantity: {cart.quantity}</p>
+                        </td>
+                        <th className="">
+                          <Link to={`/shop/${cart.productID}`}>
+                            <ShowBtn />
+                          </Link>
                         </th>
                       </tr>
                     ))}
