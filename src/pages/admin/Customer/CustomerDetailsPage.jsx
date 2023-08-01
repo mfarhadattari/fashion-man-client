@@ -32,8 +32,8 @@ const CustomerDetailsPage = () => {
           <Loaders />
         </div>
       ) : (
-        <section>
-          <div className="flex flex-col md:flex-row items-center gap-10">
+        <section className="flex flex-col md:flex-row justify-center gap-10 p-5">
+          <div className="flex flex-col md:flex-row items-center gap-5 justify-between border p-5 hover:shadow-2xl rounded-md border-teal-400">
             <div className="avatar">
               <div className="w-40 rounded">
                 <img src={customerDetails?.userInfo?.photoURL} />
@@ -47,6 +47,26 @@ const CustomerDetailsPage = () => {
               <p>
                 {customerDetails?.userInfo?.city},{" "}
                 {customerDetails?.userInfo?.country}
+              </p>
+            </div>
+          </div>
+          <div className="flex flex-row md:flex-col gap-2">
+            <div className="border  py-1 px-5 rounded-md hover:shadow-2xl border-yellow-600">
+              <h3>Total Orders</h3>
+              <p className="text-2xl">{customerDetails?.orderInfo?.length}</p>
+            </div>
+            <div className="border py-1 px-5 rounded-md hover:shadow-2xl border-black">
+              <h3>Total Carts</h3>
+              <p className="text-2xl">{customerDetails?.cartInfo?.length}</p>
+            </div>
+            <div className="border py-1 px-5 rounded-md hover:shadow-2xl border-green-600">
+              <h3>Total Payment</h3>
+              <p className="text-2xl">
+                {customerDetails?.paymentInfo?.reduce(
+                  (totalPayment, payment) => totalPayment + payment.amount,
+                  0
+                )}
+                &#2547;
               </p>
             </div>
           </div>
