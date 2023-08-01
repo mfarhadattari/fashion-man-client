@@ -5,26 +5,41 @@ import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { useQuery } from "react-query";
 import Loaders from "../../../components/Loaders";
 import {
-  FaCheckDouble,
   FaEnvelope,
   FaLocationArrow,
   FaPhone,
   FaUser,
-  FaWallet,
 } from "react-icons/fa";
 import ShowBtn from "../../../components/ShowBtn";
+import { formatTimeDate } from "../../../utils/utils";
+import { toast } from "react-hot-toast";
 
 const OrderDetailsPage = () => {
   const { id } = useParams();
   const { axiosSecure } = useAxiosSecure();
-  const { data: orderDetails = {}, isLoading } = useQuery({
+  const {
+    data: orderDetails = {},
+    isLoading,
+    refetch,
+  } = useQuery({
     queryKey: ["orderDetails", axiosSecure],
     queryFn: async () => {
       const res = await axiosSecure.get(`/order/${id}`);
       return res.data;
     },
   });
-  console.log(orderDetails);
+
+  const handelApproveOrder = (id) => {
+    axiosSecure.patch(`/admin/approve-order/${id}`).then(({ data }) => {
+      if (data.modifiedCount) {
+        toast.success("Approve Successfully!");
+        refetch();
+      } else {
+        toast.error("Somethings went wrong!");
+      }
+    });
+  };
+
   return (
     <main className="mb-20">
       <PageTitle title="Order Details | Programmer Fashion" />
@@ -37,7 +52,7 @@ const OrderDetailsPage = () => {
         </div>
       ) : (
         <>
-          <section className="grid grid-cols-1 md:grid-cols-2 md:w-3/4 gap-5  mx-auto">
+          <section className="grid grid-cols-1 md:grid-cols-2 gap-5">
             <div className="flex justify-center md:justify-start">
               <div className="w-fit text-lg border p-5 rounded-lg hover:shadow-2xl">
                 <h4 className="text-center uppercase font-semibold text-base">
@@ -52,6 +67,13 @@ const OrderDetailsPage = () => {
                 <h1 className="flex gap-2 items-center">
                   <FaPhone /> {orderDetails.phone}
                 </h1>
+                <div className="flex gap-2 items-center">
+                  <FaLocationArrow />
+                  <div>
+                    {orderDetails.address}, {orderDetails.postCode},{" "}
+                    {orderDetails.city}
+                  </div>
+                </div>
               </div>
             </div>
             <div className="flex justify-center md:justify-end">
@@ -59,21 +81,23 @@ const OrderDetailsPage = () => {
                 <h4 className="text-center uppercase font-semibold text-base">
                   Order Info
                 </h4>
-                <div className="flex gap-2 items-center">
-                  <FaLocationArrow />
-                  <div>
-                    <p>{orderDetails.address}</p>
-                    <p>
-                      {orderDetails.city}, {orderDetails.postCode}
-                    </p>
-                  </div>
+                <div className="flex gap-3">
+                  <p>Total: {orderDetails.totalAmount} &#2547;</p>
+                  <p> Status: {orderDetails.status}</p>
                 </div>
-                <p className="flex gap-2 items-center">
-                  <FaWallet /> Total: {orderDetails.totalAmount} &#2547;
-                </p>
-                <p className="flex gap-2 items-center">
-                  <FaCheckDouble /> Status: {orderDetails.status}
-                </p>
+                <p> TranID: {orderDetails.tran_id}</p>
+                <div className="flex gap-3">
+                  <p>Date: {formatTimeDate(orderDetails.timeDate).date}</p>
+                  <p>Time: {formatTimeDate(orderDetails.timeDate).time}</p>
+                </div>
+                {orderDetails.status === "Paid" && (
+                  <button
+                    onClick={() => handelApproveOrder(orderDetails._id)}
+                    className="green-btn mt-5"
+                  >
+                    Approve Order
+                  </button>
+                )}
               </div>
             </div>
           </section>
@@ -90,7 +114,10 @@ const OrderDetailsPage = () => {
                       <td>
                         <div className="avatar">
                           <div className="w-20 h-20">
-                            <img src={product.image} alt={product.productName} />
+                            <img
+                              src={product.image}
+                              alt={product.productName}
+                            />
                           </div>
                         </div>
                       </td>
