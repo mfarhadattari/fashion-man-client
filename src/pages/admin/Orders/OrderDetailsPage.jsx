@@ -4,19 +4,17 @@ import SectionTitle from "./../../../components/SectionTitle";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { useQuery } from "react-query";
 import Loaders from "../../../components/Loaders";
-import {
-  FaEnvelope,
-  FaLocationArrow,
-  FaPhone,
-  FaUser,
-} from "react-icons/fa";
+import { FaEnvelope, FaLocationArrow, FaPhone, FaUser } from "react-icons/fa";
 import ShowBtn from "../../../components/ShowBtn";
 import { formatTimeDate } from "../../../utils/utils";
 import { toast } from "react-hot-toast";
+import useIsAdmin from "../../../hooks/useIsAdmin";
 
 const OrderDetailsPage = () => {
   const { id } = useParams();
   const { axiosSecure } = useAxiosSecure();
+  const { isAdmin } = useIsAdmin();
+  
   const {
     data: orderDetails = {},
     isLoading,
@@ -90,7 +88,7 @@ const OrderDetailsPage = () => {
                   <p>Date: {formatTimeDate(orderDetails.timeDate).date}</p>
                   <p>Time: {formatTimeDate(orderDetails.timeDate).time}</p>
                 </div>
-                {orderDetails.status === "Paid" && (
+                {isAdmin && orderDetails.status === "Paid" && (
                   <button
                     onClick={() => handelApproveOrder(orderDetails._id)}
                     className="green-btn mt-5"
