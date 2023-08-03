@@ -30,7 +30,7 @@ const OurTeams = () => {
             {teamMembers.map((member) => (
               <div key={member._id} className="w-full rounded-none py-5">
                 <img
-                  className="w-52 mx-auto rounded-full border h-52"
+                  className="w-52 mx-auto rounded-full h-52"
                   src={member?.image}
                   alt={member?.name}
                 />

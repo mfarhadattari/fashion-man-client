@@ -10,9 +10,12 @@ import {
   uploadBytesResumable,
 } from "firebase/storage";
 import app from "../../../firebase/firebase.config";
+import useAxiosSecure from "../../../hooks/useAxiosSecure";
 
 const storage = getStorage(app);
 const AddTeamPage = () => {
+  const { axiosSecure } = useAxiosSecure();
+
   const [image, setImage] = useState(null);
   const imgExt = image?.type?.split("/")[1];
 
@@ -29,11 +32,12 @@ const AddTeamPage = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
 
   const handelRegister = (data) => {
-    const { email, name, position, address , phone} = data;
+    const { email, name, position, address, phone } = data;
     const storageRef = ref(storage, `/our-teams/${email}-avatar.${imgExt}`);
     const uploadTask = uploadBytesResumable(storageRef, image);
     uploadTask.on(
@@ -41,8 +45,22 @@ const AddTeamPage = () => {
       (snapshot) => {
         if (snapshot.bytesTransferred === snapshot.totalBytes) {
           getDownloadURL(snapshot?.ref).then((url) => {
-            const memberInfo = {name, email, phone, position, address, image:url }
-            console.log(memberInfo);
+            const memberInfo = {
+              name,
+              email,
+              phone,
+              position,
+              address,
+              image: url,
+            };
+            axiosSecure
+              .post("/admin/add-member", memberInfo)
+              .then(({ data }) => {
+                if (data.insertedId) {
+                  toast.success("Member Added Successfully!");
+                  reset()
+                }
+              });
           });
         }
       },
