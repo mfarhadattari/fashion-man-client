@@ -3,7 +3,15 @@ import PageTitle from "../../../components/PageTitle";
 import SectionTitle from "../../../components/SectionTitle";
 import { toast } from "react-hot-toast";
 import { useForm } from "react-hook-form";
+import {
+  getDownloadURL,
+  getStorage,
+  ref,
+  uploadBytesResumable,
+} from "firebase/storage";
+import app from "../../../firebase/firebase.config";
 
+const storage = getStorage(app);
 const AddTeamPage = () => {
   const [image, setImage] = useState(null);
   const imgExt = image?.type?.split("/")[1];
@@ -25,7 +33,21 @@ const AddTeamPage = () => {
   } = useForm();
 
   const handelRegister = (data) => {
-    console.log(data);
+    const { email, name, position, address , phone} = data;
+    const storageRef = ref(storage, `/our-teams/${email}-avatar.${imgExt}`);
+    const uploadTask = uploadBytesResumable(storageRef, image);
+    uploadTask.on(
+      "state_changed",
+      (snapshot) => {
+        if (snapshot.bytesTransferred === snapshot.totalBytes) {
+          getDownloadURL(snapshot?.ref).then((url) => {
+            const memberInfo = {name, email, phone, position, address, image:url }
+            console.log(memberInfo);
+          });
+        }
+      },
+      (error) => toast.error(error.message)
+    );
   };
   return (
     <main>
@@ -102,18 +124,18 @@ const AddTeamPage = () => {
               </div>
             </div>
             <div className="flex flex-col md:flex-row md:gap-5">
-              {/* ------------- Adress ---------- */}
+              {/* ------------- Address ---------- */}
               <div className="form-control w-full">
                 <label className="label">
-                  <span className="label-text">Adress</span>
+                  <span className="label-text">Address</span>
                 </label>
                 <input
                   type="text"
                   placeholder="Adress"
                   className="green-input w-full "
-                  {...register("adress", { required: true })}
+                  {...register("address", { required: true })}
                 />
-                {errors.adress?.type === "required" && (
+                {errors.address?.type === "required" && (
                   <p className="error-message">Address is required</p>
                 )}
               </div>
