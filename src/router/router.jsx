@@ -29,6 +29,7 @@ import AdminHomePage from "../pages/admin/AdminHome/AdminHomePage";
 import CustomerDetailsPage from "../pages/admin/Customer/CustomerDetailsPage";
 import OrderDetailsPage from "../pages/admin/Orders/OrderDetailsPage";
 import TeamPage from "../pages/admin/Teams/TeamsPage";
+import AddTeamPage from "../pages/admin/Teams/AddTeamPage";
 
 const router = createBrowserRouter([
   {
@@ -173,10 +174,18 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "our-teams",
+        path: "our-team-members",
         element: (
           <AdminOnlyRoute>
             <TeamPage />
+          </AdminOnlyRoute>
+        ),
+      },
+      {
+        path: "add-team-member",
+        element: (
+          <AdminOnlyRoute>
+            <AddTeamPage />
           </AdminOnlyRoute>
         ),
       },

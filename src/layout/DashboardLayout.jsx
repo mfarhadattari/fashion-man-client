@@ -48,8 +48,12 @@ const adminOptions = [
     name: "All Orders",
   },
   {
-    path: "/dashboard/our-teams",
+    path: "/dashboard/our-team-members",
     name: "Our Team",
+  },
+  {
+    path: "/dashboard/add-team-member",
+    name: "Add Team",
   },
   {
     path: "/dashboard/all-payments",

@@ -1,15 +1,15 @@
 import PageTitle from "../../../components/PageTitle";
 import SectionTitle from "../../../components/SectionTitle";
 
-const TeamPage = () => {
+const AddTeamPage = () => {
   return (
     <main>
-      <PageTitle title="Our Team Members | Programmer Fashion" />
+      <PageTitle title="Add Team Member | Programmer Fashion" />
       <section className="my-10">
-        <SectionTitle title="Our Team Members" />
+        <SectionTitle title="Add Team Member" />
       </section>
     </main>
   );
 };
 
-export default TeamPage;
+export default AddTeamPage;
