@@ -1,7 +1,6 @@
 import NavLink from "../../../components/NavLink";
 import { FaBars, FaCode, FaUserCircle } from "react-icons/fa";
 import ThemeToggle from "./../../../components/ThemeToggle";
-import useTheme from "../../../hooks/useTheme";
 import { Link } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 import SuccessAlert from "../../../components/SuccessAlert";
@@ -11,7 +10,6 @@ import useTotalCart from "../../../hooks/useTotalCart";
 import useIsAdmin from "../../../hooks/useIsAdmin";
 
 const NavigationBar = () => {
-  const { isDark } = useTheme();
   const { authUser, logout } = useAuth();
   const { itemInCart } = useTotalCart();
   const { isAdmin, isAdminLoading } = useIsAdmin();
@@ -57,11 +55,7 @@ const NavigationBar = () => {
   };
 
   return (
-    <nav
-      className={`navbar p-5 md:px-20 items-center sticky top-0 z-50 ${
-        isDark ? "bg-slate-950" : "bg-green-600 text-white"
-      }`}
-    >
+    <nav className="navbar p-5 md:px-20 items-center sticky top-0 z-50 bg-slate-950 text-gray-200 bg-opacity-95">
       <div className="navbar-start">
         {/* --------- Mobile and Tab Navigation  */}
         <div className="dropdown">
@@ -70,9 +64,7 @@ const NavigationBar = () => {
           </label>
           <ul
             tabIndex={0}
-            className={`menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow rounded-box w-52 ${
-              isDark ? "bg-slate-800" : "bg-green-500"
-            } `}
+            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow rounded-box w-52 bg-slate-800"
           >
             {navOptions.map((option) => (
               <NavLink key={option.path} to={option.path}>
@@ -141,9 +133,7 @@ const NavigationBar = () => {
           </label>
           <ul
             tabIndex={0}
-            className={`menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow rounded-box w-52 ${
-              isDark ? "bg-slate-800" : "bg-green-500"
-            }`}
+            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow rounded-box w-52 bg-slate-800"
           >
             {authUser ? (
               <>
