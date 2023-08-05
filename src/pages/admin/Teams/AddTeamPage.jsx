@@ -172,7 +172,7 @@ const AddTeamPage = () => {
             </div>
 
             <div className="form-control w-full mt-3">
-              <button className="green-btn" disabled={!imgExt}>
+              <button className="primary-btn" disabled={!imgExt}>
                 Add Member
               </button>
             </div>

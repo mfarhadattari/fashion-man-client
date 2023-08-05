@@ -303,7 +303,7 @@ const UpdateProductPage = () => {
             </div>
 
             <div className="form-control w-full mt-3">
-              <button className="green-btn">Update Product</button>
+              <button className="primary-btn">Update Product</button>
             </div>
           </form>
         </section>

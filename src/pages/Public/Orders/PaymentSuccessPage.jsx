@@ -8,7 +8,7 @@ const PaymentSuccessPage = () => {
       <PageTitle title="Payment Success" />
       <h1>Payment Successful!</h1>
       <div className="mt-5">
-        <Link className="green-btn" to="/">
+        <Link className="primary-btn" to="/">
           <FaArrowLeft></FaArrowLeft>
           Back Home
         </Link>

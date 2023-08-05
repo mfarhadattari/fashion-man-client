@@ -91,7 +91,7 @@ const OrderDetailsPage = () => {
                 {isAdmin && orderDetails.status === "Paid" && (
                   <button
                     onClick={() => handelApproveOrder(orderDetails._id)}
-                    className="green-btn mt-5"
+                    className="primary-btn mt-5"
                   >
                     Approve Order
                   </button>

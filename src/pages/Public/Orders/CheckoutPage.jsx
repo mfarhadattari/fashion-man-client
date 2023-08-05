@@ -189,7 +189,7 @@ const CheckoutPage = () => {
               <div className="form-control w-full">
                 <button
                   to="/dashboard/checkout"
-                  className="green-btn w-[200px] mt-5"
+                  className="primary-btn w-[200px] mt-5"
                 >
                   Place Order
                 </button>

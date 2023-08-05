@@ -129,7 +129,7 @@ const CartPage = () => {
             </table>
           </div>
           <div className="flex justify-end mt-10">
-            <Link to="/dashboard/checkout" className="green-btn w-[200px]">
+            <Link to="/dashboard/checkout" className="primary-btn w-[200px]">
               Checkout
             </Link>
           </div>

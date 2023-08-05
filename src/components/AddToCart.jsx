@@ -67,7 +67,7 @@ const AddToCart = ({ productInfo }) => {
 
   return (
     <button
-      className="green-btn w-full"
+      className="primary-btn w-full"
       onClick={handelAddToCart}
       disabled={loading}
     >

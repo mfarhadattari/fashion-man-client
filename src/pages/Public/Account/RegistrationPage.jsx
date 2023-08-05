@@ -263,7 +263,7 @@ const RegistrationPage = () => {
               </div>
               <div className="form-control w-full mt-3">
                 <button
-                  className="green-btn"
+                  className="primary-btn"
                   disabled={!isPassMatched || !image}
                 >
                   Register

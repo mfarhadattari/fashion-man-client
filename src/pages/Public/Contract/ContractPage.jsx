@@ -68,7 +68,7 @@ const ContractPage = () => {
                 <div className="form-control mt-2">
                   <button
                     type="submit"
-                    className="green-btn w-fit"
+                    className="primary-btn w-fit"
                   >
                     Send Message
                   </button>

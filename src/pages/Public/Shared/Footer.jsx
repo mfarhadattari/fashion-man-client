@@ -56,7 +56,7 @@ const Footer = () => {
                 required
                 className="input input-bordered w-full pr-16"
               />
-              <button className="green-btn absolute top-0 right-0">
+              <button className="primary-btn absolute top-0 right-0">
                 Subscribe
               </button>
             </div>

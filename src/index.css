@@ -3,8 +3,8 @@
 @tailwind components;
 @tailwind utilities;
 
-.green-btn {
-  @apply btn rounded-none bg-green-600 text-white hover:bg-slate-950;
+.primary-btn {
+  @apply btn rounded-none bg-slate-950 text-white hover:bg-slate-800;
 }
 .green-outline-btn {
   @apply btn rounded-none border-gray-400 hover:border-gray-400 hover:bg-white hover:shadow-lg;

@@ -262,7 +262,7 @@ const ProfilePage = () => {
                 ></textarea>
               </div>
               <div className={`form-control w-full ${!isEdit && "hidden"}`}>
-                <button type="submit" className="green-btn mt-5">
+                <button type="submit" className="primary-btn mt-5">
                   Update Profile
                 </button>
               </div>

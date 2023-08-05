@@ -88,7 +88,7 @@ const LoginPage = () => {
                 )}
               </div>
               <div className="form-control mt-3">
-                <button className="green-btn">Login</button>
+                <button className="primary-btn">Login</button>
               </div>
               <p className="my-3 text-base">
                 New to PROGRAMMER FASHION?{" "}

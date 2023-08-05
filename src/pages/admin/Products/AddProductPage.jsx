@@ -263,7 +263,7 @@ const AddProductPage = () => {
           </div>
 
           <div className="form-control w-full mt-3">
-            <button className="green-btn">Add Product</button>
+            <button className="primary-btn">Add Product</button>
           </div>
         </form>
       </section>
