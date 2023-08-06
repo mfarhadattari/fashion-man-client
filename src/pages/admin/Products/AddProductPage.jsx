@@ -106,7 +106,7 @@ const AddProductPage = () => {
               <input
                 type="text"
                 placeholder="Product Name"
-                className="green-input w-full "
+                className="primary-input w-full "
                 {...register("title", { required: true })}
               />
               {errors.title?.type === "required" && (
@@ -120,7 +120,7 @@ const AddProductPage = () => {
               </label>
               <select
                 placeholder="Category"
-                className="green-select w-full"
+                className="primary-select w-full"
                 defaultValue={"Select Category"}
                 {...register("category", { required: true })}
               >
@@ -140,7 +140,7 @@ const AddProductPage = () => {
               <label className="label">
                 <span className="label-text">Size</span>
               </label>
-              <div className="w-full h-[48px] border border-green-600 rounded-none flex flex-col justify-center">
+              <div className="w-full h-[48px] border border-slate-900 rounded-none flex flex-col justify-center">
                 <Select
                   name="size"
                   isMulti
@@ -172,7 +172,7 @@ const AddProductPage = () => {
               <input
                 type="file"
                 accept="image/jpeg, image/png"
-                className="green-file-input"
+                className="primary-file-input"
                 onChange={handelFile}
               />
               {imageError && <p className="error-message">Image is required</p>}
@@ -187,7 +187,7 @@ const AddProductPage = () => {
               <input
                 type="number"
                 placeholder="Product Price"
-                className="green-input w-full "
+                className="primary-input w-full "
                 min={0}
                 {...register("price", { required: true })}
               />
@@ -203,7 +203,7 @@ const AddProductPage = () => {
               <input
                 type="number"
                 placeholder="Product Discount"
-                className="green-input w-full "
+                className="primary-input w-full "
                 min={0}
                 {...register("discount", { required: true })}
               />
@@ -219,7 +219,7 @@ const AddProductPage = () => {
             </label>
             <textarea
               placeholder="Product Description"
-              className="green-textarea w-full "
+              className="primary-textarea w-full "
               {...register("description", { required: true })}
             ></textarea>
             {errors.price?.type === "required" && (
@@ -237,7 +237,7 @@ const AddProductPage = () => {
               </label>
               <textarea
                 placeholder="Product Featured. Write one down another."
-                className="green-textarea w-full "
+                className="primary-textarea w-full "
                 {...register("featured", { required: true })}
               ></textarea>
               {errors.featured?.type === "required" && (
@@ -253,7 +253,7 @@ const AddProductPage = () => {
               </label>
               <textarea
                 placeholder="Product Tags. Write one down another."
-                className="green-textarea w-full "
+                className="primary-textarea w-full "
                 {...register("tags", { required: true })}
               ></textarea>
               {errors.tags?.type === "required" && (

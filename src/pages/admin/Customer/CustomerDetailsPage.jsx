@@ -77,7 +77,7 @@ const CustomerDetailsPage = () => {
                 <h3>Total Carts</h3>
                 <p className="text-2xl">{customerDetails?.cartInfo?.length}</p>
               </div>
-              <div className="border py-1 px-5 rounded-md hover:shadow-2xl border-green-600">
+              <div className="border py-1 px-5 rounded-md hover:shadow-2xl border-slate-900">
                 <h3>Total Payment</h3>
                 <p className="text-2xl">
                   {customerDetails?.paymentInfo?.reduce(

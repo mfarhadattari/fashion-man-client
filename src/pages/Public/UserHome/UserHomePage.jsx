@@ -30,7 +30,7 @@ const UserHomePage = () => {
         <section className="mb-20">
           <Link
             to="/dashboard/profile"
-            className="flex flex-col md:flex-row gap-10 items-center justify-center border w-full p-5 mx-auto rounded-md shadow-lg hover:border-green-600"
+            className="flex flex-col md:flex-row gap-10 items-center justify-center border w-full p-5 mx-auto rounded-md shadow-lg hover:border-slate-900"
           >
             <figure className="w-[250px] h-[250px] rounded-full">
               <img
@@ -48,7 +48,7 @@ const UserHomePage = () => {
           </Link>
           <div className="grid grid-cols-1 md:grid-cols-3 items-center gap-10 justify-center mt-10">
             <Link
-              className="flex justify-center gap-10 items-end border rounded-md shadow-lg p-5 hover:border-green-600 "
+              className="flex justify-center gap-10 items-end border rounded-md shadow-lg p-5 hover:border-slate-900 "
               to="/cart"
             >
               <div className="font-bold">
@@ -60,7 +60,7 @@ const UserHomePage = () => {
               </div>
             </Link>
             <Link
-              className="flex justify-center gap-10 items-end border rounded-md shadow-lg p-5 hover:border-green-600 "
+              className="flex justify-center gap-10 items-end border rounded-md shadow-lg p-5 hover:border-slate-900 "
               to="/dashboard/orders"
             >
               <div className="font-bold">
@@ -75,7 +75,7 @@ const UserHomePage = () => {
             </Link>
             <Link
               to="/dashboard/payment-history"
-              className="flex justify-center gap-10 items-end border rounded-md shadow-lg p-5 hover:border-green-600 "
+              className="flex justify-center gap-10 items-end border rounded-md shadow-lg p-5 hover:border-slate-900 "
             >
               <div className="font-bold">
                 <h1 className="text-xl">Total Payment</h1>

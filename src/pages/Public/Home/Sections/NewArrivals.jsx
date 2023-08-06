@@ -1,9 +1,9 @@
 import SectionTitle from "../../../../components/SectionTitle";
-import ProductCard from "../../../../components/ProductCard";
 import { Link } from "react-router-dom";
 import useAxiosPublic from "../../../../hooks/useAxiosPublic";
 import { useQuery } from "react-query";
 import Loaders from "./../../../../components/Loaders";
+import NewProductCard from "../../../../components/NewProductCard";
 
 const NewArrivals = () => {
   const { axiosPublic } = useAxiosPublic();
@@ -29,7 +29,7 @@ const NewArrivals = () => {
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-20 gap-5 p-5">
           {newProducts.map((product) => (
-            <ProductCard key={product._id} productInfo={product}></ProductCard>
+            <NewProductCard key={product._id} productInfo={product}></NewProductCard>
           ))}
         </div>
       )}

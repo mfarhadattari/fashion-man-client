@@ -85,7 +85,7 @@ const CheckoutPage = () => {
                   <input
                     type="text"
                     defaultValue={userInfo?.displayName}
-                    className="green-input w-full "
+                    className="primary-input w-full "
                     {...register("name", { required: true })}
                   />
                   {errors.name?.type === "required" && (
@@ -100,7 +100,7 @@ const CheckoutPage = () => {
                   <input
                     defaultValue={userInfo?.email}
                     disabled={true}
-                    className="green-input w-full "
+                    className="primary-input w-full "
                   />
                 </div>
               </div>
@@ -114,7 +114,7 @@ const CheckoutPage = () => {
                     type="tel"
                     defaultValue={userInfo?.phone}
                     placeholder="Phone Number"
-                    className="green-input w-full "
+                    className="primary-input w-full "
                     {...register("phone", { required: true })}
                   />
                   {errors.phone?.type === "required" && (
@@ -132,7 +132,7 @@ const CheckoutPage = () => {
                         cart.price * cart.quantity + totalAmount,
                       0
                     )}
-                    className="green-input w-full "
+                    className="primary-input w-full "
                     disabled
                   />
                 </div>
@@ -147,7 +147,7 @@ const CheckoutPage = () => {
                     type="text"
                     defaultValue={userInfo?.city}
                     placeholder={!userInfo?.city ? "Not set" : ""}
-                    className="green-input w-full "
+                    className="primary-input w-full "
                     {...register("city", { required: true })}
                   />
                   {errors.city?.type === "required" && (
@@ -163,7 +163,7 @@ const CheckoutPage = () => {
                   <input
                     type="text"
                     placeholder="Post Code"
-                    className="green-input w-full "
+                    className="primary-input w-full "
                     {...register("postCode", { required: true })}
                   />
                   {errors.postCode?.type === "required" && (
@@ -179,7 +179,7 @@ const CheckoutPage = () => {
                 <textarea
                   defaultValue={userInfo?.address}
                   placeholder={!userInfo?.address ? "Not set" : ""}
-                  className="green-textarea"
+                  className="primary-textarea"
                   {...register("address", { required: true })}
                 ></textarea>
                 {errors.address?.type === "required" && (

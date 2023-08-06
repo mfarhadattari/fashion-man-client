@@ -112,7 +112,7 @@ const ProfilePage = () => {
             <img src={userInfo?.photoURL} className="w-[200px] rounded-full" />
             <input
               type="file"
-              className={`green-file-input ${!isEdit && "hidden"}`}
+              className={`primary-file-input ${!isEdit && "hidden"}`}
               onChange={handelFile}
             />
             <div>
@@ -158,7 +158,7 @@ const ProfilePage = () => {
                       !userInfo?.displayName?.split(" ")[0] ? "Not set" : ""
                     }
                     disabled={!isEdit}
-                    className="green-input w-full "
+                    className="primary-input w-full "
                     {...register("firstName", { required: true })}
                   />
                   {errors.firstName?.type === "required" && (
@@ -182,7 +182,7 @@ const ProfilePage = () => {
                         : ""
                     }
                     disabled={!isEdit}
-                    className="green-input w-full "
+                    className="primary-input w-full "
                     {...register("lastName", { required: true })}
                   />
                   {errors.lastName?.type === "required" && (
@@ -200,7 +200,7 @@ const ProfilePage = () => {
                     type="text"
                     defaultValue={userInfo?.email}
                     disabled={true}
-                    className="green-input w-full "
+                    className="primary-input w-full "
                   />
                 </div>
                 {/* ----------------- Phone ----------------- */}
@@ -213,7 +213,7 @@ const ProfilePage = () => {
                     defaultValue={userInfo?.phone}
                     placeholder={!userInfo?.phone ? "Not set" : ""}
                     disabled={!isEdit}
-                    className="green-input w-full "
+                    className="primary-input w-full "
                     {...register("phone")}
                   />
                 </div>
@@ -229,7 +229,7 @@ const ProfilePage = () => {
                     defaultValue={userInfo?.city}
                     placeholder={!userInfo?.city ? "Not set" : ""}
                     disabled={!isEdit}
-                    className="green-input w-full "
+                    className="primary-input w-full "
                     {...register("city")}
                   />
                 </div>
@@ -243,7 +243,7 @@ const ProfilePage = () => {
                     defaultValue={userInfo?.country}
                     placeholder={!userInfo?.country ? "Not set" : ""}
                     disabled={!isEdit}
-                    className="green-input w-full "
+                    className="primary-input w-full "
                     {...register("country")}
                   />
                 </div>
@@ -257,7 +257,7 @@ const ProfilePage = () => {
                   defaultValue={userInfo?.address}
                   placeholder={!userInfo?.address ? "Not set" : ""}
                   disabled={!isEdit}
-                  className="green-textarea"
+                  className="primary-textarea"
                   {...register("address")}
                 ></textarea>
               </div>

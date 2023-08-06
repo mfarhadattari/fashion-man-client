@@ -4,26 +4,26 @@
 @tailwind utilities;
 
 .primary-btn {
-  @apply btn rounded-none bg-slate-950 text-white hover:bg-slate-800;
+  @apply btn rounded-none bg-slate-950 text-white hover:bg-slate-900;
 }
-.green-outline-btn {
-  @apply btn rounded-none border-gray-400 hover:border-gray-400 hover:bg-white hover:shadow-lg;
-}
-
-.green-file-input {
-  @apply file-input rounded-none border-green-600 w-full;
+.primary-outline-btn {
+  @apply btn rounded-none border-slate-900 hover:border-slate-950 hover:bg-white hover:shadow-lg;
 }
 
-.green-input {
-  @apply input border border-green-600 rounded-none w-full;
+.primary-file-input {
+  @apply file-input rounded-none border-slate-950 w-full;
 }
 
-.green-textarea {
-  @apply textarea text-base border border-green-600 rounded-none;
+.primary-input {
+  @apply input border border-slate-950 rounded-none w-full;
 }
 
-.green-select {
-  @apply select border-green-600 rounded-none w-full text-lg;
+.primary-textarea {
+  @apply textarea text-base border border-slate-950 rounded-none;
+}
+
+.primary-select {
+  @apply select border-slate-950 rounded-none w-full text-lg;
 }
 
 .error-message {

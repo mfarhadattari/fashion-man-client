@@ -72,7 +72,7 @@ const AddToCart = ({ productInfo }) => {
       disabled={loading}
     >
       {loading ? (
-        <span className="loading loading-spinner text-green-600"></span>
+        <span className="loading loading-spinner text-slate-900"></span>
       ) : (
         ""
       )}

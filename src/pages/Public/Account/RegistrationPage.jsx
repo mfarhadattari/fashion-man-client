@@ -132,7 +132,7 @@ const RegistrationPage = () => {
                   <input
                     type="text"
                     placeholder="First Name"
-                    className="green-input w-full "
+                    className="primary-input w-full "
                     {...register("firstName", { required: true })}
                   />
                   {errors.firstName?.type === "required" && (
@@ -147,7 +147,7 @@ const RegistrationPage = () => {
                   <input
                     type="text"
                     placeholder="Last Name"
-                    className="green-input w-full "
+                    className="primary-input w-full "
                     {...register("lastName", { required: true })}
                   />
                   {errors.lastName?.type === "required" && (
@@ -164,7 +164,7 @@ const RegistrationPage = () => {
                   <input
                     type="email"
                     placeholder="Email"
-                    className="green-input w-full"
+                    className="primary-input w-full"
                     {...register("email", { required: true })}
                   />
                   {errors.email?.type === "required" && (
@@ -179,7 +179,7 @@ const RegistrationPage = () => {
                   <input
                     type="file"
                     accept="image/jpeg, image/png"
-                    className="green-file-input"
+                    className="primary-file-input"
                     onChange={handelFile}
                   />
                 </div>
@@ -196,7 +196,7 @@ const RegistrationPage = () => {
                       placeholder="Password"
                       name="password"
                       onKeyUp={(e) => setInputPassword(e.target.value)}
-                      className="green-input w-full"
+                      className="primary-input w-full"
                       {...register("password", {
                         required: true,
                         minLength: 8,
@@ -245,7 +245,7 @@ const RegistrationPage = () => {
                   <input
                     type="password"
                     placeholder="Confirm Password"
-                    className="green-input w-full"
+                    className="primary-input w-full"
                     onKeyUp={handleConfirmPassword}
                     {...register("confirmPassword", { required: true })}
                   />

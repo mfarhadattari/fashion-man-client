@@ -127,7 +127,7 @@ const UpdateProductPage = () => {
                 <input
                   type="text"
                   placeholder="Product Name"
-                  className="green-input w-full "
+                  className="primary-input w-full "
                   defaultValue={product?.title}
                   {...register("title", { required: true })}
                 />
@@ -142,7 +142,7 @@ const UpdateProductPage = () => {
                 </label>
                 <select
                   placeholder="Category"
-                  className="green-select w-full"
+                  className="primary-select w-full"
                   defaultValue={product?.category}
                   {...register("category", { required: true })}
                 >
@@ -161,7 +161,7 @@ const UpdateProductPage = () => {
                 <label className="label">
                   <span className="label-text">Size</span>
                 </label>
-                <div className="w-full h-[48px] border border-green-600 rounded-none flex flex-col justify-center">
+                <div className="w-full h-[48px] border border-slate-900 rounded-none flex flex-col justify-center">
                   <Select
                     name="size"
                     isMulti
@@ -198,7 +198,7 @@ const UpdateProductPage = () => {
                   <input
                     type="file"
                     accept="image/jpeg, image/png"
-                    className="green-file-input"
+                    className="primary-file-input"
                     onChange={handelFile}
                   />
                   {imageURL && (
@@ -218,7 +218,7 @@ const UpdateProductPage = () => {
                 <input
                   type="number"
                   placeholder="Product Price"
-                  className="green-input w-full "
+                  className="primary-input w-full "
                   defaultValue={product?.price}
                   min={0}
                   {...register("price", { required: true })}
@@ -235,7 +235,7 @@ const UpdateProductPage = () => {
                 <input
                   type="number"
                   placeholder="Product Discount"
-                  className="green-input w-full "
+                  className="primary-input w-full "
                   defaultValue={product?.discount}
                   min={0}
                   {...register("discount", { required: true })}
@@ -252,7 +252,7 @@ const UpdateProductPage = () => {
               </label>
               <textarea
                 placeholder="Product Description"
-                className="green-textarea w-full "
+                className="primary-textarea w-full "
                 rows={4}
                 defaultValue={product?.description}
                 {...register("description", { required: true })}
@@ -272,7 +272,7 @@ const UpdateProductPage = () => {
                 </label>
                 <textarea
                   placeholder="Product Featured. Write one down another."
-                  className="green-textarea w-full "
+                  className="primary-textarea w-full "
                   defaultValue={product?.featured
                     ?.map((feature) => `${feature} \n`)
                     .join("")}
@@ -291,7 +291,7 @@ const UpdateProductPage = () => {
                 </label>
                 <textarea
                   placeholder="Product Tags. Write one down another."
-                  className="green-textarea w-full "
+                  className="primary-textarea w-full "
                   defaultValue={product?.tags?.map((tag) => `${tag} \n`)
                     .join("")}
                   {...register("tags", { required: true })}

@@ -40,7 +40,7 @@ const ContractPage = () => {
                       type="name"
                       placeholder="Name"
                       required
-                      className="input  border-green-600 rounded-none"
+                      className="input  border-slate-900 rounded-none"
                     />
                   </div>
                   <div className="form-control w-full">
@@ -51,7 +51,7 @@ const ContractPage = () => {
                       type="email"
                       placeholder="Email"
                       required
-                      className="input border-green-600 rounded-none"
+                      className="input border-slate-900 rounded-none"
                     />
                   </div>
                 </div>
@@ -61,7 +61,7 @@ const ContractPage = () => {
                   </label>
                   <textarea
                     placeholder="Message"
-                    className="green-textarea"
+                    className="primary-textarea"
                     rows="4"
                   ></textarea>
                 </div>

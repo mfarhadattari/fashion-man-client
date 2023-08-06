@@ -55,7 +55,7 @@ const LoginPage = () => {
                 <input
                   type="email"
                   placeholder="Email"
-                  className="green-input w-full"
+                  className="primary-input w-full"
                   {...register("email", { required: true })}
                 />
                 {errors.email?.type === "required" && (
@@ -70,7 +70,7 @@ const LoginPage = () => {
                   <input
                     type={showPassword ? "text" : "password"}
                     placeholder="Password"
-                    className="green-input w-full"
+                    className="primary-input w-full"
                     {...register("password", {
                       required: true,
                     })}

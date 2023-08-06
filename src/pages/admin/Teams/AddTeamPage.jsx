@@ -86,7 +86,7 @@ const AddTeamPage = () => {
                 <input
                   type="text"
                   placeholder="Name"
-                  className="green-input w-full "
+                  className="primary-input w-full "
                   {...register("name", { required: true })}
                 />
                 {errors.name?.type === "required" && (
@@ -101,7 +101,7 @@ const AddTeamPage = () => {
                 <input
                   type="email"
                   placeholder="Email"
-                  className="green-input w-full"
+                  className="primary-input w-full"
                   {...register("email", { required: true })}
                 />
                 {errors.email?.type === "required" && (
@@ -118,7 +118,7 @@ const AddTeamPage = () => {
                 <input
                   type="text"
                   placeholder="Phone"
-                  className="green-input w-full "
+                  className="primary-input w-full "
                   {...register("phone", { required: true })}
                 />
                 {errors.phone?.type === "required" && (
@@ -133,7 +133,7 @@ const AddTeamPage = () => {
                 <input
                   type="text"
                   placeholder="Position"
-                  className="green-input w-full "
+                  className="primary-input w-full "
                   {...register("position", { required: true })}
                 />
                 {errors.position?.type === "required" && (
@@ -150,7 +150,7 @@ const AddTeamPage = () => {
                 <input
                   type="text"
                   placeholder="Adress"
-                  className="green-input w-full "
+                  className="primary-input w-full "
                   {...register("address", { required: true })}
                 />
                 {errors.address?.type === "required" && (
@@ -165,7 +165,7 @@ const AddTeamPage = () => {
                 <input
                   type="file"
                   accept="image/jpeg, image/png"
-                  className="green-file-input"
+                  className="primary-file-input"
                   onChange={handelFile}
                 />
               </div>
