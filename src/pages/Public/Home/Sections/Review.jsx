@@ -23,7 +23,7 @@ const Review = () => {
                 type="text"
                 placeholder="Name"
                 required
-                className="input  border-slate-900 rounded-none"
+                className="primary-input"
               />
             </div>
             <div className="form-control w-full">
@@ -34,7 +34,7 @@ const Review = () => {
                 type="email"
                 placeholder="Email"
                 required
-                className="input border-slate-900 rounded-none"
+                className="primary-input"
               />
             </div>
           </div>
@@ -59,7 +59,7 @@ const Review = () => {
                 type="text"
                 placeholder="Review"
                 required
-                className="input  border-slate-900 rounded-none"
+                className="primary-input"
               />
             </div>
           </div>

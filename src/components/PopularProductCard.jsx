@@ -6,7 +6,7 @@ const PopularProductCard = ({ productInfo }) => {
       <Link to={`/shop/${productInfo?._id}`}>
         <figure>
           <img
-            className="w-[300px] h-[200px]"
+            className="w-[300px] h-[200px] rounded-md"
             src={productInfo?.image}
             alt={productInfo?.title}
           />
