@@ -2,7 +2,12 @@ import { Link } from "react-router-dom";
 
 const PopularProductCard = ({ productInfo }) => {
   return (
-    <div className="card w-full border p-5 rounded-3xl rounded-bl-none hover:skew-y-2 hover:skew-x-2 duration-500 hover:shadow-2xl">
+    <div
+      data-aos="fade-down"
+      data-aos-easing="linear"
+      data-aos-duration="1500"
+      className="card w-full border p-5 rounded-3xl rounded-bl-none hover:skew-y-2 hover:skew-x-2 duration-500 hover:shadow-2xl"
+    >
       <Link to={`/shop/${productInfo?._id}`}>
         <figure>
           <img

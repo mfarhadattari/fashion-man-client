@@ -72,7 +72,7 @@ const DashboardLayout = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <NavigationBar></NavigationBar>
-      <div className="h-full w-full flex">
+      <div className="h-full w-full flex max-w-7xl mx-auto">
         <div className="w-1/4 hidden lg:block">
           <ul className="menu px-1 fixed">
             {options.map((option) => (
@@ -102,7 +102,7 @@ const DashboardLayout = () => {
               {isOpen ? <FaXmark></FaXmark> : <FaGear></FaGear>}
             </span>
           </button>
-          <div className="mt-10 lg:mt-0">
+          <div className="mt-10 lg:mt-0 ">
             <Outlet></Outlet>
           </div>
         </div>
@@ -110,7 +110,7 @@ const DashboardLayout = () => {
       <ScrollToTop
         smooth
         component={
-          <span className="btn btn-circle btn-outline text-xl text-red-500">
+          <span className="btn btn-circle btn-outline text-xl text-green-500">
             <FaArrowUp></FaArrowUp>
           </span>
         }

@@ -10,10 +10,10 @@ const Review = () => {
     <section className="my-10 p-5">
       <SectionTitle title="Review Us" subtitle="What you thing about us!" />
       <div className="flex flex-col lg:flex-row-reverse gap-10 items-center h-fit mt-10">
-        <div className="w-full">
+        <div className="w-full" data-aos="zoom-in-left"  data-aos-duration="3000">
           <img src={reviewimage} className="rounded-md" />
         </div>
-        <form className="card-body p-0 w-full">
+        <form className="card-body p-0 w-full" data-aos="zoom-in-right"  data-aos-duration="3000">
           <div className="flex flex-col md:flex-row gap-5">
             <div className="form-control w-full">
               <label className="label">

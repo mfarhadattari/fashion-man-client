@@ -6,7 +6,7 @@ const Category = () => {
     <section className="my-10">
       <Marquee pauseOnHover={true}>
         {categories.map((item, idx) => (
-          <div className="w-[200px] h-[120px] border m-5 text-center rounded-3xl text-2xl hover:bg-slate-950 flex justify-center items-center uppercase" key={idx}>{item}</div>
+          <div className="w-[200px] h-[120px] border m-5 text-center rounded-3xl hover:text-white text-2xl hover:bg-slate-950 flex justify-center items-center uppercase" key={idx}>{item}</div>
         ))}
       </Marquee>
     </section>

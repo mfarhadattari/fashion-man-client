@@ -15,12 +15,14 @@ const MainLayout = () => {
     <div className="min-h-screen flex flex-col justify-between ">
       <div>
         <NavigationBar></NavigationBar>
-        <Outlet></Outlet>
+        <div className="max-w-7xl mx-auto ">
+          <Outlet></Outlet>
+        </div>
       </div>
       <ScrollToTop
         smooth
         component={
-          <span className="btn btn-circle btn-outline text-xl text-red-500">
+          <span className="btn btn-circle btn-outline text-xl text-green-500">
             <FaArrowUp></FaArrowUp>
           </span>
         }
@@ -34,7 +36,7 @@ const MainLayout = () => {
           boxShadow: "none",
         }}
       />
-     {!withoutFooter && <Footer></Footer>}
+      {!withoutFooter && <Footer></Footer>}
     </div>
   );
 };
